@@ -1,0 +1,22 @@
+[2026-05-11T10:53:49.428+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T10:53:50.000+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_rekrute manual__2026-05-11T10:42:53.206022+00:00 [queued]>
+[2026-05-11T10:53:50.333+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_rekrute manual__2026-05-11T10:42:53.206022+00:00 [queued]>
+[2026-05-11T10:53:50.364+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T10:53:50.675+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_rekrute> on 2026-05-11 10:42:53.206022+00:00
+[2026-05-11T10:53:50.695+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=600) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T10:53:50.699+0000] {standard_task_runner.py:63} INFO - Started process 604 to run task
+[2026-05-11T10:53:50.726+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'scrape_rekrute', 'manual__2026-05-11T10:42:53.206022+00:00', '--job-id', '507', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpuvhn9hgp']
+[2026-05-11T10:53:50.733+0000] {standard_task_runner.py:91} INFO - Job 507: Subtask scrape_rekrute
+[2026-05-11T10:53:51.175+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.scrape_rekrute manual__2026-05-11T10:42:53.206022+00:00 [running]> on host 895ca0ce75a2
+[2026-05-11T10:53:52.469+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='scrape_rekrute' AIRFLOW_CTX_EXECUTION_DATE='2026-05-11T10:42:53.206022+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-11T10:42:53.206022+00:00'
+[2026-05-11T10:53:52.485+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T10:53:52.615+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper_api:8000/scrape/rekrute
+[2026-05-11T10:53:56.042+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute erreur : HTTPConnectionPool(host='scraper_api', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd2d33adc40>: Failed to resolve 'scraper_api' ([Errno -2] Name or service not known)"))
+[2026-05-11T10:53:56.045+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd2d33adc40>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-05-11T10:53:56.211+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd2d33adc40>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-05-11T10:53:56.244+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T10:53:56.658+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=scrape_rekrute, run_id=manual__2026-05-11T10:42:53.206022+00:00, execution_date=20260511T104253, start_date=20260511T105350, end_date=20260511T105356
+[2026-05-11T10:53:56.955+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-11T10:53:57.117+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

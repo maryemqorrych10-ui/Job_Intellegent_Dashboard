@@ -1,0 +1,1 @@
+[2026-05-11T10:21:33.907+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: job_intelligent_pipeline.etl_kafka scheduled__2026-05-10T06:00:00+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

@@ -1,0 +1,22 @@
+[2026-05-11T18:19:50.202+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T18:19:50.327+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_france_travail manual__2026-05-11T18:19:41.670437+00:00 [queued]>
+[2026-05-11T18:19:50.382+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_france_travail manual__2026-05-11T18:19:41.670437+00:00 [queued]>
+[2026-05-11T18:19:50.388+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T18:19:50.488+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_france_travail> on 2026-05-11 18:19:41.670437+00:00
+[2026-05-11T18:19:50.544+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=170) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T18:19:50.569+0000] {standard_task_runner.py:63} INFO - Started process 174 to run task
+[2026-05-11T18:19:50.565+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'scrape_france_travail', 'manual__2026-05-11T18:19:41.670437+00:00', '--job-id', '65', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpluov_71x']
+[2026-05-11T18:19:50.585+0000] {standard_task_runner.py:91} INFO - Job 65: Subtask scrape_france_travail
+[2026-05-11T18:19:51.095+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.scrape_france_travail manual__2026-05-11T18:19:41.670437+00:00 [running]> on host 3d6dc2445e84
+[2026-05-11T18:19:51.869+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='scrape_france_travail' AIRFLOW_CTX_EXECUTION_DATE='2026-05-11T18:19:41.670437+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-11T18:19:41.670437+00:00'
+[2026-05-11T18:19:51.873+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T18:19:52.031+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper-api:8000/scrape/france_travail
+[2026-05-11T18:19:53.659+0000] {logging_mixin.py:188} INFO - [Scraping] FranceTravail : {'status': 'success', 'data': {'scraped': 50, 'minio_path': 'france_travail/2026-05-11/36950b50-612f-4c52-af40-8736e3d04d73.json'}}
+[2026-05-11T18:19:53.736+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'success', 'data': {'scraped': 50, 'minio_path': 'france_travail/2026-05-11/36950b50-612f-4c52-af40-8736e3d04d73.json'}}
+[2026-05-11T18:19:53.737+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T18:19:53.901+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=scrape_france_travail, run_id=manual__2026-05-11T18:19:41.670437+00:00, execution_date=20260511T181941, start_date=20260511T181950, end_date=20260511T181953
+[2026-05-11T18:19:54.025+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-11T18:19:54.193+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T18:19:54.206+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

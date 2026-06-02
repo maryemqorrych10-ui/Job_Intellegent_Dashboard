@@ -1,0 +1,21 @@
+[2026-05-19T17:45:01.182+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-19T17:45:01.377+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.load_star_schema scheduled__2026-05-18T06:00:00+00:00 [queued]>
+[2026-05-19T17:45:01.433+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.load_star_schema scheduled__2026-05-18T06:00:00+00:00 [queued]>
+[2026-05-19T17:45:01.446+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-19T17:45:01.543+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_star_schema> on 2026-05-18 06:00:00+00:00
+[2026-05-19T17:45:01.577+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=133) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-19T17:45:01.592+0000] {standard_task_runner.py:63} INFO - Started process 134 to run task
+[2026-05-19T17:45:01.587+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'load_star_schema', 'scheduled__2026-05-18T06:00:00+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpxpjcuusk']
+[2026-05-19T17:45:01.603+0000] {standard_task_runner.py:91} INFO - Job 114: Subtask load_star_schema
+[2026-05-19T17:45:02.054+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.load_star_schema scheduled__2026-05-18T06:00:00+00:00 [running]> on host 023bb09a4b6e
+[2026-05-19T17:45:03.005+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='load_star_schema' AIRFLOW_CTX_EXECUTION_DATE='2026-05-18T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-18T06:00:00+00:00'
+[2026-05-19T17:45:03.095+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-19T17:45:04.956+0000] {logging_mixin.py:188} INFO - [Load] 0 offres lues depuis MinIO gold
+[2026-05-19T17:45:05.114+0000] {python.py:237} INFO - Done. Returned value was: {'charge': 0}
+[2026-05-19T17:45:05.119+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-19T17:45:05.357+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=load_star_schema, run_id=scheduled__2026-05-18T06:00:00+00:00, execution_date=20260518T060000, start_date=20260519T174501, end_date=20260519T174505
+[2026-05-19T17:45:05.536+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-19T17:45:05.787+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-19T17:45:05.806+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

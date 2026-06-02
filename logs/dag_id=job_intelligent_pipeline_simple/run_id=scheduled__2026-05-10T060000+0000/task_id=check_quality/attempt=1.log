@@ -1,0 +1,49 @@
+[2026-05-11T10:41:28.231+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T10:41:29.035+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simple.check_quality scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T10:41:29.151+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simple.check_quality scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T10:41:29.166+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T10:41:29.326+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): check_quality> on 2026-05-10 06:00:00+00:00
+[2026-05-11T10:41:29.360+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=416) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T10:41:29.427+0000] {standard_task_runner.py:63} INFO - Started process 417 to run task
+[2026-05-11T10:41:29.437+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simple', 'check_quality', 'scheduled__2026-05-10T06:00:00+00:00', '--job-id', '498', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpz3_imcdk']
+[2026-05-11T10:41:29.455+0000] {standard_task_runner.py:91} INFO - Job 498: Subtask check_quality
+[2026-05-11T10:41:30.751+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simple.check_quality scheduled__2026-05-10T06:00:00+00:00 [running]> on host 895ca0ce75a2
+[2026-05-11T10:41:34.366+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simple' AIRFLOW_CTX_TASK_ID='check_quality' AIRFLOW_CTX_EXECUTION_DATE='2026-05-10T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-10T06:00:00+00:00'
+[2026-05-11T10:41:34.400+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T10:41:36.174+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-05-11T10:41:36.229+0000] {logging_mixin.py:188} INFO -   RAPPORT PIPELINE JOB INTELLIGENT
+[2026-05-11T10:41:36.299+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-05-11T10:41:36.364+0000] {logging_mixin.py:188} INFO -   Rekrute        : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd2d33f3b90>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-05-11T10:41:36.422+0000] {logging_mixin.py:188} INFO -   France Travail : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/france_travail (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd2d329eae0>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-05-11T10:41:36.455+0000] {logging_mixin.py:188} INFO -   Adzuna         : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/adzuna (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fd2d380f080>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-05-11T10:41:36.520+0000] {logging_mixin.py:188} INFO -   Offres brutes lues : 0
+[2026-05-11T10:41:36.604+0000] {logging_mixin.py:188} INFO -   Offres transformées: 0
+[2026-05-11T10:41:36.700+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-05-11T10:41:36.733+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T10:41:36.749+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/__pycache__/job_intelligent_pipeline.py", line 159, in task_check_quality
+    raise ValueError("Pipeline échoué : aucune offre transformée")
+ValueError: Pipeline échoué : aucune offre transformée
+[2026-05-11T10:41:37.300+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=job_intelligent_pipeline_simple, task_id=check_quality, run_id=scheduled__2026-05-10T06:00:00+00:00, execution_date=20260510T060000, start_date=20260511T104129, end_date=20260511T104137
+[2026-05-11T10:41:38.921+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 498 for task check_quality (Pipeline échoué : aucune offre transformée; 417)
+[2026-05-11T10:41:39.094+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-11T10:41:39.459+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T10:41:39.494+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

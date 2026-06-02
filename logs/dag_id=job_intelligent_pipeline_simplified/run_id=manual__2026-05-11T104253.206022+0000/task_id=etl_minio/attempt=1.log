@@ -1,0 +1,40 @@
+[2026-05-11T10:54:21.774+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T10:54:21.911+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio manual__2026-05-11T10:42:53.206022+00:00 [queued]>
+[2026-05-11T10:54:21.971+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio manual__2026-05-11T10:42:53.206022+00:00 [queued]>
+[2026-05-11T10:54:21.981+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T10:54:22.097+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_minio> on 2026-05-11 10:42:53.206022+00:00
+[2026-05-11T10:54:22.107+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=614) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T10:54:22.111+0000] {standard_task_runner.py:63} INFO - Started process 615 to run task
+[2026-05-11T10:54:22.117+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'etl_minio', 'manual__2026-05-11T10:42:53.206022+00:00', '--job-id', '511', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpjrt3ayb9']
+[2026-05-11T10:54:22.120+0000] {standard_task_runner.py:91} INFO - Job 511: Subtask etl_minio
+[2026-05-11T10:54:22.410+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.etl_minio manual__2026-05-11T10:42:53.206022+00:00 [running]> on host 895ca0ce75a2
+[2026-05-11T10:54:22.840+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='etl_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-05-11T10:42:53.206022+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-11T10:42:53.206022+00:00'
+[2026-05-11T10:54:22.848+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T10:54:22.919+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T10:54:22.924+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 460, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/__pycache__/job_intelligent_pipeline.py", line 75, in task_etl_minio
+    from etl_from_minio import run_etl_from_minio
+ModuleNotFoundError: No module named 'etl_from_minio'
+[2026-05-11T10:54:23.013+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=job_intelligent_pipeline_simplified, task_id=etl_minio, run_id=manual__2026-05-11T10:42:53.206022+00:00, execution_date=20260511T104253, start_date=20260511T105421, end_date=20260511T105423
+[2026-05-11T10:54:23.056+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 511 for task etl_minio (No module named 'etl_from_minio'; 615)
+[2026-05-11T10:54:23.073+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-11T10:54:23.152+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T10:54:23.158+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

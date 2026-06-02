@@ -1,0 +1,201 @@
+[2026-05-19T17:43:18.651+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-19T17:43:18.894+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-18T06:00:00+00:00 [queued]>
+[2026-05-19T17:43:19.050+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-18T06:00:00+00:00 [queued]>
+[2026-05-19T17:43:19.119+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-19T17:43:19.512+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_minio> on 2026-05-18 06:00:00+00:00
+[2026-05-19T17:43:19.713+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=109) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-19T17:43:19.802+0000] {standard_task_runner.py:63} INFO - Started process 110 to run task
+[2026-05-19T17:43:19.743+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'etl_minio', 'scheduled__2026-05-18T06:00:00+00:00', '--job-id', '113', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmptx6_0slo']
+[2026-05-19T17:43:19.930+0000] {standard_task_runner.py:91} INFO - Job 113: Subtask etl_minio
+[2026-05-19T17:43:21.266+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-18T06:00:00+00:00 [running]> on host 023bb09a4b6e
+[2026-05-19T17:43:24.576+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='etl_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-05-18T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-18T06:00:00+00:00'
+[2026-05-19T17:43:24.591+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-19T17:43:37.628+0000] {logging_mixin.py:188} INFO - 🚀 ETL depuis MinIO (bronze → silver/gold → MySQL)
+[2026-05-19T17:43:37.710+0000] {logging_mixin.py:188} INFO - [ETL] rekrute/2026-05-11/6e0155f5-307e-44f7-b2c2-80f0fcc52908.json : 5 offres
+[2026-05-19T17:43:37.727+0000] {logging_mixin.py:188} INFO - [ETL] rekrute/2026-05-11/a4e374df-abce-4cd3-9068-e8f21ffaba8c.json : 5 offres
+[2026-05-19T17:43:37.758+0000] {logging_mixin.py:188} INFO - [ETL] rekrute/2026-05-11/c887c5f4-ce57-4f0f-a666-016e0201ba8a.json : 5 offres
+[2026-05-19T17:43:37.773+0000] {logging_mixin.py:188} INFO - [ETL] rekrute/2026-05-17/7d4fe625-19c9-4c42-bfe4-89fb561e67b6.json : 2 offres
+[2026-05-19T17:43:37.789+0000] {logging_mixin.py:188} INFO - [ETL] rekrute/2026-05-17/a34f5470-f38c-49a7-89ef-2994469f3dcc.json : 2 offres
+[2026-05-19T17:43:37.808+0000] {logging_mixin.py:188} INFO - [ETL] rekrute/2026-05-18/499f23ef-18b7-4150-bbde-f6efaa46d6ed.json : 2 offres
+[2026-05-19T17:43:37.820+0000] {logging_mixin.py:188} INFO - [ETL] rekrute/2026-05-19/cd409d8a-c004-47ab-a451-ee6c8722e859.json : 2 offres
+[2026-05-19T17:43:37.865+0000] {logging_mixin.py:188} INFO - [ETL] france_travail/2026-05-11/36950b50-612f-4c52-af40-8736e3d04d73.json : 50 offres
+[2026-05-19T17:43:37.918+0000] {logging_mixin.py:188} INFO - [ETL] france_travail/2026-05-11/ac286139-68e3-40b8-a80e-87f74e8c7042.json : 490 offres
+[2026-05-19T17:43:37.967+0000] {logging_mixin.py:188} INFO - [ETL] france_travail/2026-05-17/19698018-7fe9-4283-b065-cb95513f305f.json : 500 offres
+[2026-05-19T17:43:38.027+0000] {logging_mixin.py:188} INFO - [ETL] france_travail/2026-05-17/7493680a-36d9-4236-b46e-43dbf0288b81.json : 500 offres
+[2026-05-19T17:43:38.097+0000] {logging_mixin.py:188} INFO - [ETL] france_travail/2026-05-18/a0458298-0455-47b9-a1fd-46616bc31fe6.json : 500 offres
+[2026-05-19T17:43:38.178+0000] {logging_mixin.py:188} INFO - [ETL] france_travail/2026-05-19/5db00a03-8d2a-4421-967f-d3e8edb4bf37.json : 500 offres
+[2026-05-19T17:43:38.271+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-11/54390702-6523-45bd-8c56-549233b487da.json : 40 offres
+[2026-05-19T17:43:38.347+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-11/547e8732-a39b-4cd3-9a37-5fbb4b3d8391.json : 500 offres
+[2026-05-19T17:43:38.371+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-11/d4853b3d-0417-4d9b-9c5a-ebb0f96dcd53.json : 40 offres
+[2026-05-19T17:43:38.514+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-17/0ac011ae-7601-4ca3-87f2-21128f83c822.json : 500 offres
+[2026-05-19T17:43:38.653+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-17/fdf492e2-9681-4489-8b2f-c75410ac2be4.json : 500 offres
+[2026-05-19T17:43:38.804+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-18/71419d58-fe3e-4542-bd1d-ef9d98b8c23d.json : 500 offres
+[2026-05-19T17:43:38.880+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-19/381b206e-80a1-4699-8155-99185eb08ec0.json : 500 offres
+[2026-05-19T17:43:38.893+0000] {logging_mixin.py:188} INFO - 📥 5143 offres brutes lues
+[2026-05-19T17:43:39.532+0000] {logging_mixin.py:188} INFO - 💾 Silver rekrute → silver/source=rekrute/date=2026-05-19/jobs_7528fa90-011c-4274-b9d7-0663befb588e.json
+[2026-05-19T17:43:39.709+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_059790b7-313a-49df-a66b-c8e2df5f5e67.json
+[2026-05-19T17:43:39.805+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_e94c0efa-8abb-4eed-b986-95ea273d9015.json
+[2026-05-19T17:43:46.567+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:47.116+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_3e552eab-21a5-41b5-828d-eacfe7c788d3.json
+[2026-05-19T17:43:47.172+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_a272b930-e17c-4702-b75c-38649858d42e.json
+[2026-05-19T17:43:47.571+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:47.885+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_fe539f27-cc14-4566-a6ff-8b639210e7dd.json
+[2026-05-19T17:43:47.951+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_857520d8-d46d-4e5c-84a7-39aa2b5e71b4.json
+[2026-05-19T17:43:48.347+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:48.601+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_3659c36f-329b-4c92-b21b-90dcea457c99.json
+[2026-05-19T17:43:48.632+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_5e837577-5e14-4d1b-ae85-735ccfaa0261.json
+[2026-05-19T17:43:49.023+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:49.364+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_58d1dcd9-f713-40dd-a4ec-3df47eae4280.json
+[2026-05-19T17:43:49.396+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_0a899868-764f-402d-b057-89880ef3e55b.json
+[2026-05-19T17:43:49.732+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:50.453+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_21f58ff8-150f-4b29-bae7-e9ea194c388b.json
+[2026-05-19T17:43:50.507+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_4a147b5e-1730-48d9-8467-95c97c7f5eff.json
+[2026-05-19T17:43:51.324+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:52.631+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_b4e11061-f4e4-4467-8d14-0370406f2f90.json
+[2026-05-19T17:43:52.754+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_662576af-41e5-4925-a88a-611811f11296.json
+[2026-05-19T17:43:53.532+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:54.349+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_c0f9e3b7-73b4-46c9-94e4-8359715e4a4c.json
+[2026-05-19T17:43:54.468+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_2f0b1420-db9e-4149-94a7-51b4a8de8160.json
+[2026-05-19T17:43:54.850+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:55.297+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_8a2e12f0-cab7-4122-9f69-0dd4b2a8f29f.json
+[2026-05-19T17:43:55.340+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_638ad665-a140-4b12-b23f-7f70123d2cc2.json
+[2026-05-19T17:43:55.735+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:56.142+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_f071d64a-1506-4641-a737-60f1e6bb8179.json
+[2026-05-19T17:43:56.168+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_ec6acf7f-3404-4b11-942b-5e3bd6eeb6a5.json
+[2026-05-19T17:43:56.533+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:56.867+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_29d7a883-eb7e-4a62-b5e5-6a54a3b2d86d.json
+[2026-05-19T17:43:56.906+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_6e94f7d6-412b-40f9-a1de-271b82606dd9.json
+[2026-05-19T17:43:57.385+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:57.795+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_4db042f4-ad64-4ba0-a606-dcddbf6fb627.json
+[2026-05-19T17:43:57.827+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_fbc41ff2-0a77-47f1-be44-9ec84dc7aab9.json
+[2026-05-19T17:43:58.222+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:58.513+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_2e08e635-b37f-485f-8a6e-cbafc2fd051c.json
+[2026-05-19T17:43:58.537+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_858bb90c-6e22-4914-b428-5f8f736c8136.json
+[2026-05-19T17:43:58.828+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:43:59.169+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_bde197e3-a6c5-459e-89a3-1113dd3804d6.json
+[2026-05-19T17:43:59.199+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_8b070dbb-ebe5-4dc7-a3ac-4298679550ed.json
+[2026-05-19T17:43:59.500+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:00.002+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_f6c44308-7866-40ae-b24c-6fb254bed40d.json
+[2026-05-19T17:44:00.086+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_6c6fb095-4de3-4bee-906c-547dfee4a71c.json
+[2026-05-19T17:44:00.468+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:00.779+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_a6497e2f-65c9-4f68-a5cc-5e11d62b189e.json
+[2026-05-19T17:44:00.872+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_7c22acce-e23d-468d-b19c-4b79e50403a5.json
+[2026-05-19T17:44:01.567+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:02.407+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_702c9fb0-b024-4288-9d54-f066a8843e06.json
+[2026-05-19T17:44:02.477+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_89ef9ef6-e103-47d0-8226-c0a46f258208.json
+[2026-05-19T17:44:03.381+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:03.830+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_74751db1-cb2a-4e8a-8df0-d64d7a601d18.json
+[2026-05-19T17:44:03.870+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_3edcc401-961d-4837-87c8-248da6ab1ad4.json
+[2026-05-19T17:44:04.895+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:05.609+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_8bb98c7a-fc94-4d24-ae97-2fee9c7cced4.json
+[2026-05-19T17:44:05.652+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_1dc212c1-9f18-44ce-9ec1-cfae371cbe07.json
+[2026-05-19T17:44:06.487+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:07.398+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_4391275d-f580-4e01-83f4-0196c151296b.json
+[2026-05-19T17:44:07.461+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_8d31143b-061a-4543-bc1a-1b27979ec0fc.json
+[2026-05-19T17:44:08.218+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:08.704+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_28a71a48-14c2-4555-adc3-fa9a34fa297b.json
+[2026-05-19T17:44:08.741+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_f1bb6095-1c41-4a2a-a53b-2a18d82987a2.json
+[2026-05-19T17:44:11.629+0000] {logging_mixin.py:188} INFO - ✅ 30 offres chargées dans MySQL
+[2026-05-19T17:44:12.078+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_9ff2a941-7b35-4667-9b9e-5cb4d8458f53.json
+[2026-05-19T17:44:12.164+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_6ed7cbf9-76d8-4ee4-bf24-55cb95caee47.json
+[2026-05-19T17:44:14.048+0000] {logging_mixin.py:188} INFO - ✅ 13 offres chargées dans MySQL
+[2026-05-19T17:44:15.005+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_1c70d112-c89d-413b-9100-cca491634f76.json
+[2026-05-19T17:44:15.065+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_9a5ff5c7-9ae2-47ff-95d6-3645d269a43c.json
+[2026-05-19T17:44:15.729+0000] {logging_mixin.py:188} INFO - ✅ 2 offres chargées dans MySQL
+[2026-05-19T17:44:16.252+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_4b964d6e-3e4f-4227-b107-6695f2a15583.json
+[2026-05-19T17:44:16.417+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_8cac3d82-7041-4e11-b2d0-05e55ce04f51.json
+[2026-05-19T17:44:16.785+0000] {logging_mixin.py:188} INFO - ✅ 1 offres chargées dans MySQL
+[2026-05-19T17:44:17.198+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_c290d67b-f6c5-4edb-94b8-e3ccff39b0e6.json
+[2026-05-19T17:44:17.261+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_6fbe87bf-8e6a-4c8d-8f0f-066c51210791.json
+[2026-05-19T17:44:17.695+0000] {logging_mixin.py:188} INFO - ✅ 1 offres chargées dans MySQL
+[2026-05-19T17:44:18.041+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_874aaf06-8336-4c2a-816a-33d30a599584.json
+[2026-05-19T17:44:18.086+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-19/jobs_02373f3d-515b-41a0-9f63-7474abbc7306.json
+[2026-05-19T17:44:18.158+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_b1b753f8-27e8-49b5-9e9c-095d7744863b.json
+[2026-05-19T17:44:18.627+0000] {logging_mixin.py:188} INFO - ✅ 1 offres chargées dans MySQL
+[2026-05-19T17:44:18.892+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_f9720547-33a6-445a-96a1-438a2065d5ae.json
+[2026-05-19T17:44:18.933+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_ec208048-418c-46ac-93d9-ee8d5bfcd7bd.json
+[2026-05-19T17:44:19.273+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:19.532+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_bbcf88d3-e9aa-4d94-b12f-42c9cbcf512b.json
+[2026-05-19T17:44:19.627+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_82d0e17e-eb0b-4e0c-98dc-07fb9f46a06e.json
+[2026-05-19T17:44:20.872+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:21.683+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_9b9e6f45-445c-4ebe-98fe-afb8fdee5e3b.json
+[2026-05-19T17:44:21.788+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_0b31f4a8-f455-4185-908e-1c8a5b4d0574.json
+[2026-05-19T17:44:22.697+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:24.367+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_24318322-0d6d-4d3f-9305-a038caf966fa.json
+[2026-05-19T17:44:24.607+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_ff4d9f05-0359-4c5d-b7d8-029289ad26b3.json
+[2026-05-19T17:44:25.747+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:26.786+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_41992a22-c74c-49b4-8cd1-c312dd3bf30e.json
+[2026-05-19T17:44:26.916+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_f648ceda-a31b-4f1c-a615-bfe3d864b69a.json
+[2026-05-19T17:44:27.634+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:28.811+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_de477270-4fc7-49c0-9d6a-8ce512ada9a1.json
+[2026-05-19T17:44:28.868+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_80f3d6f5-af47-4723-b8e8-2c4646cfb61e.json
+[2026-05-19T17:44:29.368+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:30.264+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_c229464d-7c56-45cb-8446-e5f5eb201aa3.json
+[2026-05-19T17:44:30.394+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_7cfa7da9-e3ba-4933-b6ec-53b65fec36da.json
+[2026-05-19T17:44:31.352+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:32.281+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_f7b192a5-7b30-43ee-aa7d-8191b5cceaa5.json
+[2026-05-19T17:44:32.351+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_9b25d3dc-049e-4f21-8daf-e33cb884afc4.json
+[2026-05-19T17:44:33.124+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:34.102+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_02d304cb-7ae4-4158-b0a6-913c558755e7.json
+[2026-05-19T17:44:34.277+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_cfc65921-a745-4713-b398-96f729d398c4.json
+[2026-05-19T17:44:34.953+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:35.681+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_100424e9-c2f0-4b63-9000-f10eef9beebb.json
+[2026-05-19T17:44:35.739+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_bad0d4fa-3186-4c99-88c7-8a68463d1129.json
+[2026-05-19T17:44:36.470+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:37.062+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_24469c0e-32cd-492f-9fc5-ad480bdc4bdc.json
+[2026-05-19T17:44:37.121+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_a396f6d8-f454-4f29-90a8-a12d65826eb1.json
+[2026-05-19T17:44:37.643+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:38.198+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_13c37c8f-9bb1-4fb8-9b16-685472a6cf9c.json
+[2026-05-19T17:44:38.254+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_68fdfc85-bc98-4233-a707-599a3a06f87a.json
+[2026-05-19T17:44:38.564+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:39.208+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_7228a33c-d57b-40ce-998d-7afc6684fc45.json
+[2026-05-19T17:44:39.272+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_ff137a2c-afd2-4e3a-9bf2-18953f39d75a.json
+[2026-05-19T17:44:39.633+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:40.441+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_95d6d9c0-5ea2-4b99-a744-45920709dc36.json
+[2026-05-19T17:44:40.471+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_18a56ec5-8283-4471-a2c7-09772a4affae.json
+[2026-05-19T17:44:40.906+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:41.428+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_f32d699c-a244-4074-b5ea-adaf0fd8648e.json
+[2026-05-19T17:44:41.459+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_6ca72c58-87d6-4cf4-8ff1-a1030337b533.json
+[2026-05-19T17:44:41.772+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:42.320+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_4ebbf8b9-f6af-499a-b4ca-f126fc2955d9.json
+[2026-05-19T17:44:42.350+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_4de698e2-1322-45e9-967f-8756f611a4d9.json
+[2026-05-19T17:44:42.929+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:43.935+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_63aef9e3-1032-48af-b648-cede37c9c9f5.json
+[2026-05-19T17:44:44.039+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_97237ffc-4561-41df-beb8-d2514ea1aa0f.json
+[2026-05-19T17:44:45.326+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:45.659+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_26fa922d-30d1-4f2e-b0a6-9b5ca8f3a821.json
+[2026-05-19T17:44:45.693+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_400f7010-ad4c-463c-a7b9-57c826b36bec.json
+[2026-05-19T17:44:46.089+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:46.849+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_bd118468-dd3a-4d3a-b763-da3703062189.json
+[2026-05-19T17:44:46.927+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_8ec9e691-cb68-4e3d-ad6a-62fa207cd5b4.json
+[2026-05-19T17:44:47.565+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:48.111+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_51ace220-3e6c-471d-85da-4b2aa816598e.json
+[2026-05-19T17:44:48.157+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_0ec8d879-3382-4b5d-8f9f-f6b7bb8cad87.json
+[2026-05-19T17:44:48.582+0000] {logging_mixin.py:188} INFO - ✅ 0 offres chargées dans MySQL
+[2026-05-19T17:44:49.278+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_fad2f9f8-91c1-4078-947d-ce6c909a1d92.json
+[2026-05-19T17:44:49.345+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_aa4d6a3c-2f1a-4f7a-80c0-e739dbce216d.json
+[2026-05-19T17:44:50.520+0000] {logging_mixin.py:188} INFO - ✅ 6 offres chargées dans MySQL
+[2026-05-19T17:44:50.944+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_ca1b0d50-102e-4aef-bc93-a597eaadea5f.json
+[2026-05-19T17:44:51.124+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_b7e72d46-4534-4dcd-ad44-6f9df4488650.json
+[2026-05-19T17:44:51.772+0000] {logging_mixin.py:188} INFO - ✅ 5 offres chargées dans MySQL
+[2026-05-19T17:44:52.197+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_a7ce6da1-c930-4179-a9fb-63f94a08fe4e.json
+[2026-05-19T17:44:52.227+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_6f09c416-ccc8-4233-a964-be0af604361c.json
+[2026-05-19T17:44:52.823+0000] {logging_mixin.py:188} INFO - ✅ 5 offres chargées dans MySQL
+[2026-05-19T17:44:53.400+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_26168c07-b8fb-46bc-9e36-ddb0f3d8f286.json
+[2026-05-19T17:44:53.453+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_a3ed8b28-f2dd-4582-9571-e4dfc53e2824.json
+[2026-05-19T17:44:54.587+0000] {logging_mixin.py:188} INFO - ✅ 9 offres chargées dans MySQL
+[2026-05-19T17:44:54.871+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_fc89766f-7ebb-4c11-b999-a39b76a6cebe.json
+[2026-05-19T17:44:55.022+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_88b342da-15e4-4c85-8c18-aba3ffdb8a38.json
+[2026-05-19T17:44:55.954+0000] {logging_mixin.py:188} INFO - ✅ 6 offres chargées dans MySQL
+[2026-05-19T17:44:56.127+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-19/jobs_2d7a751e-572f-4c38-9935-8c626a927691.json
+[2026-05-19T17:44:56.163+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-19_165b9ec5-200a-4958-87f0-18827ce25e2d.json
+[2026-05-19T17:44:56.691+0000] {logging_mixin.py:188} INFO - ✅ 3 offres chargées dans MySQL
+[2026-05-19T17:44:56.692+0000] {logging_mixin.py:188} INFO - ✅ ETL terminé. Offres transformées et chargées : 5050
+[2026-05-19T17:44:56.966+0000] {python.py:237} INFO - Done. Returned value was: {'total_lus': 5143, 'total_charge': 5050}
+[2026-05-19T17:44:56.978+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-19T17:44:57.143+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=etl_minio, run_id=scheduled__2026-05-18T06:00:00+00:00, execution_date=20260518T060000, start_date=20260519T174318, end_date=20260519T174457
+[2026-05-19T17:44:57.340+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-19T17:44:57.521+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-19T17:44:57.526+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

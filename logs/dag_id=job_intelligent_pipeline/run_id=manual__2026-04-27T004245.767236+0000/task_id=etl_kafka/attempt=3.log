@@ -1,0 +1,129 @@
+[2026-04-27T00:54:16.087+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T00:54:16.139+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T00:42:45.767236+00:00 [queued]>
+[2026-04-27T00:54:16.162+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T00:42:45.767236+00:00 [queued]>
+[2026-04-27T00:54:16.167+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2026-04-27T00:54:16.209+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_kafka> on 2026-04-27 00:42:45.767236+00:00
+[2026-04-27T00:54:16.222+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2714) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-27T00:54:16.225+0000] {standard_task_runner.py:63} INFO - Started process 2715 to run task
+[2026-04-27T00:54:16.226+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'etl_kafka', 'manual__2026-04-27T00:42:45.767236+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmpqmkvyvfe']
+[2026-04-27T00:54:16.229+0000] {standard_task_runner.py:91} INFO - Job 72: Subtask etl_kafka
+[2026-04-27T00:54:16.369+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T00:42:45.767236+00:00 [running]> on host 31133b84880c
+[2026-04-27T00:54:16.673+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='etl_kafka' AIRFLOW_CTX_EXECUTION_DATE='2026-04-27T00:42:45.767236+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-27T00:42:45.767236+00:00'
+[2026-04-27T00:54:16.676+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T00:54:19.502+0000] {logging_mixin.py:188} INFO - [ETL] Connexion Kafka : kafka:9092
+[2026-04-27T00:54:19.506+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T00:54:19.511+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.18.0.3', 9092)]>: Broker version identified as 2.6
+[2026-04-27T00:54:19.512+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T00:54:19.519+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('raw_jobs_rekrute', 'raw_jobs_france_travail', 'raw_jobs_adzuna', 'raw_jobs_emploi_ma', 'raw_jobs_stagiaire', 'raw_jobs_marocannonces', 'raw_jobs_jobspy', 'raw_jobs_remotive')
+[2026-04-27T00:54:19.520+0000] {logging_mixin.py:188} INFO - [ETL] Lecture Kafka (timeout=30s)...
+[2026-04-27T00:54:19.526+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T00:54:19.529+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T00:54:19.533+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2026-04-27T00:54:19.638+0000] {cluster.py:403} INFO - Coordinator for group/***_etl_group is ('coordinator-1', 'kafka', 9092, None)
+[2026-04-27T00:54:19.640+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group ***_etl_group
+[2026-04-27T00:54:19.641+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2026-04-27T00:54:19.643+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group ***_etl_group
+[2026-04-27T00:54:19.644+0000] {base.py:433} INFO - Failed to join group ***_etl_group: NodeNotReadyError: coordinator-1
+[2026-04-27T00:54:19.647+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T00:54:19.649+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T00:54:19.750+0000] {base.py:546} INFO - (Re-)joining group ***_etl_group
+[2026-04-27T00:54:19.758+0000] {base.py:661} INFO - Received member id kafka-python-2.3.1-b40f593f-eb1d-418c-82ab-93f79b38ee25 for group ***_etl_group; will retry join-group
+[2026-04-27T00:54:19.759+0000] {base.py:433} INFO - Failed to join group ***_etl_group: [Error 79] MemberIdRequiredError
+[2026-04-27T00:54:19.761+0000] {base.py:546} INFO - (Re-)joining group ***_etl_group
+[2026-04-27T00:54:19.769+0000] {base.py:617} INFO - Successfully joined group ***_etl_group <Generation 3 (member_id: kafka-python-2.3.1-b40f593f-eb1d-418c-82ab-93f79b38ee25, protocol: range)>
+[2026-04-27T00:54:19.782+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-04-27T00:54:19.800+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('raw_jobs_adzuna', 0), ('raw_jobs_emploi_ma', 0), ('raw_jobs_france_travail', 0), ('raw_jobs_jobspy', 0), ('raw_jobs_marocannonces', 0), ('raw_jobs_rekrute', 0), ('raw_jobs_remotive', 0), ('raw_jobs_stagiaire', 0)]
+[2026-04-27T00:54:19.806+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('raw_jobs_remotive', 0), ('raw_jobs_jobspy', 0), ('raw_jobs_france_travail', 0), ('raw_jobs_marocannonces', 0), ('raw_jobs_stagiaire', 0), ('raw_jobs_rekrute', 0), ('raw_jobs_adzuna', 0), ('raw_jobs_emploi_ma', 0)) for group ***_etl_group
+[2026-04-27T00:54:19.877+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_remotive', 0) to offset 0.
+[2026-04-27T00:54:19.898+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_jobspy', 0) to offset 0.
+[2026-04-27T00:54:19.902+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_france_travail', 0) to offset 0.
+[2026-04-27T00:54:19.923+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_marocannonces', 0) to offset 0.
+[2026-04-27T00:54:19.937+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_stagiaire', 0) to offset 0.
+[2026-04-27T00:54:19.939+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_rekrute', 0) to offset 0.
+[2026-04-27T00:54:19.940+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_adzuna', 0) to offset 0.
+[2026-04-27T00:54:19.941+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_emploi_ma', 0) to offset 0.
+[2026-04-27T00:54:20.415+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T00:54:20.599+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T00:54:20.624+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T00:54:20.625+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/dag_job_intelligent.py", line 191, in task_etl_kafka
+    total_charge += _process_etl_batch(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_job_intelligent.py", line 150, in _process_etl_batch
+    save_silver_minio(src_offres, src)
+  File "/app/scripts/etl_transform.py", line 147, in save_silver_minio
+    minio_client.fput_object(MINIO_BUCKET_SILVER, file_name, tmp_path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1054, in fput_object
+    return self.put_object(
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 2015, in put_object
+    raise exc
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1960, in put_object
+    return self._put_object(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1789, in _put_object
+    response = self._execute(
+               ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 441, in _execute
+    region = self._get_region(bucket_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 498, in _get_region
+    response = self._url_open(
+               ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 427, in _url_open
+    raise response_error
+minio.error.S3Error: S3 operation failed; code: SignatureDoesNotMatch, message: The request signature we calculated does not match the signature you provided. Check your key and signing method., resource: /silver, request_id: 18AA109AE73A4125, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: silver
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 460, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_job_intelligent.py", line 202, in task_etl_kafka
+    total_charge += _process_etl_batch(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_job_intelligent.py", line 150, in _process_etl_batch
+    save_silver_minio(src_offres, src)
+  File "/app/scripts/etl_transform.py", line 147, in save_silver_minio
+    minio_client.fput_object(MINIO_BUCKET_SILVER, file_name, tmp_path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1054, in fput_object
+    return self.put_object(
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 2015, in put_object
+    raise exc
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1960, in put_object
+    return self._put_object(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1789, in _put_object
+    response = self._execute(
+               ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 441, in _execute
+    region = self._get_region(bucket_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 498, in _get_region
+    response = self._url_open(
+               ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 427, in _url_open
+    raise response_error
+minio.error.S3Error: S3 operation failed; code: SignatureDoesNotMatch, message: The request signature we calculated does not match the signature you provided. Check your key and signing method., resource: /silver, request_id: 18AA109AF1CCE213, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: silver
+[2026-04-27T00:54:20.690+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=job_intelligent_pipeline, task_id=etl_kafka, run_id=manual__2026-04-27T00:42:45.767236+00:00, execution_date=20260427T004245, start_date=20260427T005416, end_date=20260427T005420
+[2026-04-27T00:54:20.754+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 72 for task etl_kafka (S3 operation failed; code: SignatureDoesNotMatch, message: The request signature we calculated does not match the signature you provided. Check your key and signing method., resource: /silver, request_id: 18AA109AF1CCE213, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: silver; 2715)
+[2026-04-27T00:54:20.819+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-04-27T00:54:20.893+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T00:54:20.912+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

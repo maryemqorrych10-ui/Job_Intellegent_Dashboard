@@ -1,0 +1,23 @@
+[2026-04-29T20:41:57.992+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-29T20:41:58.376+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_adzuna manual__2026-04-29T18:49:26.624902+00:00 [queued]>
+[2026-04-29T20:41:58.556+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_adzuna manual__2026-04-29T18:49:26.624902+00:00 [queued]>
+[2026-04-29T20:41:58.575+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-29T20:41:58.957+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_adzuna> on 2026-04-29 18:49:26.624902+00:00
+[2026-04-29T20:41:59.149+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2205) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-29T20:41:59.231+0000] {standard_task_runner.py:63} INFO - Started process 2217 to run task
+[2026-04-29T20:41:59.166+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'scrape_adzuna', 'manual__2026-04-29T18:49:26.624902+00:00', '--job-id', '141', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmpr8nhezax']
+[2026-04-29T20:41:59.410+0000] {standard_task_runner.py:91} INFO - Job 141: Subtask scrape_adzuna
+[2026-04-29T20:41:59.854+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.scrape_adzuna manual__2026-04-29T18:49:26.624902+00:00 [running]> on host 00190f46936a
+[2026-04-29T20:42:00.774+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='scrape_adzuna' AIRFLOW_CTX_EXECUTION_DATE='2026-04-29T18:49:26.624902+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-29T18:49:26.624902+00:00'
+[2026-04-29T20:42:00.784+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-29T20:42:00.890+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper_api:8000/scraper/adzuna
+[2026-04-29T20:42:04.348+0000] {logging_mixin.py:188} INFO - [Scraping] Adzuna erreur : HTTPConnectionPool(host='scraper_api', port=8000): Max retries exceeded with url: /scraper/adzuna (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f5d46e5bfb0>: Failed to resolve 'scraper_api' ([Errno -2] Name or service not known)"))
+[2026-04-29T20:42:04.368+0000] {logging_mixin.py:188} INFO - [Scraping] Adzuna : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scraper/adzuna (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f5d46e5bfb0>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-29T20:42:04.779+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scraper/adzuna (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f5d46e5bfb0>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-29T20:42:04.789+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-29T20:42:05.083+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline, task_id=scrape_adzuna, run_id=manual__2026-04-29T18:49:26.624902+00:00, execution_date=20260429T184926, start_date=20260429T204158, end_date=20260429T204205
+[2026-04-29T20:42:05.243+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-29T20:42:05.454+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-29T20:42:05.475+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

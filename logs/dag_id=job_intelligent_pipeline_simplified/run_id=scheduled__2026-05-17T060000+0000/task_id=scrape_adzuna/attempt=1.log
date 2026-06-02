@@ -1,0 +1,22 @@
+[2026-05-18T10:00:35.905+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-18T10:00:37.566+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_adzuna scheduled__2026-05-17T06:00:00+00:00 [queued]>
+[2026-05-18T10:00:37.928+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_adzuna scheduled__2026-05-17T06:00:00+00:00 [queued]>
+[2026-05-18T10:00:37.943+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-18T10:00:38.690+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_adzuna> on 2026-05-17 06:00:00+00:00
+[2026-05-18T10:00:38.979+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=6619) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-18T10:00:39.107+0000] {standard_task_runner.py:63} INFO - Started process 6630 to run task
+[2026-05-18T10:00:39.096+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'scrape_adzuna', 'scheduled__2026-05-17T06:00:00+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpg8qfug2z']
+[2026-05-18T10:00:39.221+0000] {standard_task_runner.py:91} INFO - Job 57: Subtask scrape_adzuna
+[2026-05-18T10:00:43.753+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.scrape_adzuna scheduled__2026-05-17T06:00:00+00:00 [running]> on host d156e5650201
+[2026-05-18T10:00:49.963+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='scrape_adzuna' AIRFLOW_CTX_EXECUTION_DATE='2026-05-17T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-17T06:00:00+00:00'
+[2026-05-18T10:00:49.978+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-18T10:00:51.136+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper-api:8000/scrape/adzuna
+[2026-05-18T10:00:53.945+0000] {logging_mixin.py:188} INFO - [Scraping] Adzuna : {'status': 'success', 'data': {'scraped': 0}}
+[2026-05-18T10:00:54.590+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'success', 'data': {'scraped': 0}}
+[2026-05-18T10:00:54.607+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-18T10:00:55.462+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=scrape_adzuna, run_id=scheduled__2026-05-17T06:00:00+00:00, execution_date=20260517T060000, start_date=20260518T100037, end_date=20260518T100055
+[2026-05-18T10:00:56.626+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-18T10:00:57.234+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-18T10:00:57.258+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

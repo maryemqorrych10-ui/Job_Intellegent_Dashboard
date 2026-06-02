@@ -1,0 +1,305 @@
+[2026-05-09T00:00:08.459+0000] {processor.py:161} INFO - Started process (PID=8428) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:00:08.461+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:00:08.464+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:00:08.463+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:00:08.540+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:00:08.658+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:00:08.658+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:00:08.865+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.424 seconds
+[2026-05-09T00:00:39.195+0000] {processor.py:161} INFO - Started process (PID=8443) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:00:39.197+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:00:39.210+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:00:39.209+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:00:39.292+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:00:39.395+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:00:39.395+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:00:39.559+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.393 seconds
+[2026-05-09T00:01:10.384+0000] {processor.py:161} INFO - Started process (PID=8451) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:01:10.386+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:01:10.389+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:01:10.388+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:01:10.462+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:01:10.608+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:01:10.600+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:01:10.735+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.369 seconds
+[2026-05-09T00:01:41.113+0000] {processor.py:161} INFO - Started process (PID=8466) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:01:41.121+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:01:41.123+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:01:41.123+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:01:41.184+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:01:41.364+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:01:41.364+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:01:41.569+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.471 seconds
+[2026-05-09T00:02:12.915+0000] {processor.py:161} INFO - Started process (PID=8474) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:02:12.919+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:02:12.949+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:02:12.933+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:02:13.140+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:02:13.404+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:02:13.403+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:02:13.788+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.924 seconds
+[2026-05-09T00:02:44.794+0000] {processor.py:161} INFO - Started process (PID=8489) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:02:44.799+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:02:44.835+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:02:44.815+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:02:45.078+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:02:45.468+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:02:45.467+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:02:45.856+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 1.086 seconds
+[2026-05-09T00:03:16.569+0000] {processor.py:161} INFO - Started process (PID=8497) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:03:16.571+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:03:16.573+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:03:16.572+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:03:16.622+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:03:16.758+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:03:16.757+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:03:16.908+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.355 seconds
+[2026-05-09T00:03:47.574+0000] {processor.py:161} INFO - Started process (PID=8511) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:03:47.576+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:03:47.580+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:03:47.580+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:03:47.686+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:03:47.828+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:03:47.828+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:03:47.952+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.403 seconds
+[2026-05-09T00:04:18.327+0000] {processor.py:161} INFO - Started process (PID=8519) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:04:18.338+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:04:18.342+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:04:18.341+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:04:18.403+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:04:18.545+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:04:18.544+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:04:18.693+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.385 seconds
+[2026-05-09T00:04:50.685+0000] {processor.py:161} INFO - Started process (PID=8533) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:04:50.710+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:04:50.721+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:04:50.719+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:04:51.053+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:04:51.303+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:04:51.303+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:04:51.821+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 1.172 seconds
+[2026-05-09T00:05:22.320+0000] {processor.py:161} INFO - Started process (PID=8548) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:05:22.335+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:05:22.338+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:05:22.337+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:05:22.720+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:05:23.125+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:05:23.124+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:05:23.636+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 1.352 seconds
+[2026-05-09T00:05:55.827+0000] {processor.py:161} INFO - Started process (PID=8556) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:05:55.860+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:05:55.877+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:05:55.876+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:05:56.477+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:05:57.183+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:05:57.183+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:05:57.761+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 1.970 seconds
+[2026-05-09T00:06:28.201+0000] {processor.py:161} INFO - Started process (PID=8569) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:06:28.216+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:06:28.219+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:06:28.218+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:06:28.347+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:06:28.657+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:06:28.646+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:06:29.191+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 1.038 seconds
+[2026-05-09T00:07:00.473+0000] {processor.py:161} INFO - Started process (PID=8577) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:07:00.481+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:07:00.497+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:07:00.496+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:07:01.078+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:07:01.446+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:07:01.445+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:07:01.816+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 1.390 seconds
+[2026-05-09T00:07:32.216+0000] {processor.py:161} INFO - Started process (PID=8590) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:07:32.218+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:07:32.223+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:07:32.223+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:07:32.291+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:07:32.427+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:07:32.427+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:07:32.873+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.675 seconds
+[2026-05-09T00:08:03.729+0000] {processor.py:161} INFO - Started process (PID=8598) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:08:03.735+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:08:03.747+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:08:03.746+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:08:04.055+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:08:04.213+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:08:04.212+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:08:04.290+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.621 seconds
+[2026-05-09T00:08:34.630+0000] {processor.py:161} INFO - Started process (PID=8613) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:08:34.632+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:08:34.636+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:08:34.635+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:08:34.701+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:08:34.847+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:08:34.846+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:08:35.094+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.480 seconds
+[2026-05-09T00:09:05.824+0000] {processor.py:161} INFO - Started process (PID=8627) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:09:05.826+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:09:05.828+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:09:05.827+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:09:05.881+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:09:06.024+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:09:06.023+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:09:06.077+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:09:06.077+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:09:06.128+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.316 seconds
+[2026-05-09T00:09:36.855+0000] {processor.py:161} INFO - Started process (PID=8635) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:09:36.866+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:09:36.879+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:09:36.878+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:09:37.073+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:09:37.386+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:09:37.378+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:09:37.580+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:09:37.579+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:09:37.685+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.852 seconds
+[2026-05-09T00:10:08.507+0000] {processor.py:161} INFO - Started process (PID=8650) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:10:08.511+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:10:08.518+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:10:08.517+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:10:08.603+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:10:08.717+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:10:08.717+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:10:08.788+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:10:08.788+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:10:08.829+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.336 seconds
+[2026-05-09T00:10:39.023+0000] {processor.py:161} INFO - Started process (PID=8658) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:10:39.025+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:10:39.026+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:10:39.026+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:10:39.072+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:10:39.166+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:10:39.166+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:10:39.249+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:10:39.248+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:10:39.298+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.286 seconds
+[2026-05-09T00:11:09.553+0000] {processor.py:161} INFO - Started process (PID=8673) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:11:09.555+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:11:09.556+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:11:09.556+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:11:09.598+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:11:09.681+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:11:09.681+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:11:09.776+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:11:09.775+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:11:09.825+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.280 seconds
+[2026-05-09T00:11:40.417+0000] {processor.py:161} INFO - Started process (PID=8681) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:11:40.420+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:11:40.422+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:11:40.422+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:11:40.481+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:11:40.584+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:11:40.583+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:11:40.678+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:11:40.678+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:11:40.714+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.309 seconds
+[2026-05-09T00:12:11.357+0000] {processor.py:161} INFO - Started process (PID=8695) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:12:11.368+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:12:11.388+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:12:11.387+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:12:11.528+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:12:11.792+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:12:11.790+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:12:11.855+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:12:11.855+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:12:12.002+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.667 seconds
+[2026-05-09T00:12:42.780+0000] {processor.py:161} INFO - Started process (PID=8703) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:12:42.782+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:12:42.786+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:12:42.784+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:12:42.841+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:12:43.237+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:12:43.237+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:12:43.469+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:12:43.455+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:12:43.641+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.877 seconds
+[2026-05-09T00:13:13.833+0000] {processor.py:161} INFO - Started process (PID=8717) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:13:13.835+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:13:13.838+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:13:13.837+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:13:13.893+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:13:13.972+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:13:13.971+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:13:14.009+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:13:14.008+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:13:14.047+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.229 seconds
+[2026-05-09T00:13:44.269+0000] {processor.py:161} INFO - Started process (PID=8725) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:13:44.271+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:13:44.273+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:13:44.272+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:13:44.311+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:13:44.393+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:13:44.393+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:13:44.499+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:13:44.498+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:13:44.567+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.310 seconds
+[2026-05-09T00:14:14.882+0000] {processor.py:161} INFO - Started process (PID=8740) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:14:14.884+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:14:14.886+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:14:14.886+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:14:14.927+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:14:14.997+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:14:14.996+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:14:15.110+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:14:15.109+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:14:15.166+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.305 seconds
+[2026-05-09T00:14:45.357+0000] {processor.py:161} INFO - Started process (PID=8749) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:14:45.359+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:14:45.361+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:14:45.360+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:14:45.411+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:14:45.481+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:14:45.481+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:14:45.552+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:14:45.551+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:14:45.627+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.282 seconds
+[2026-05-09T00:15:16.273+0000] {processor.py:161} INFO - Started process (PID=8763) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:15:16.278+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:15:16.285+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:15:16.283+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:15:16.414+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:15:16.531+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:15:16.529+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:15:16.591+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:15:16.590+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:15:16.623+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.385 seconds
+[2026-05-09T00:15:47.269+0000] {processor.py:161} INFO - Started process (PID=8771) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:15:47.271+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:15:47.273+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:15:47.272+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:15:47.312+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:15:47.391+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:15:47.391+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:15:47.443+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:15:47.442+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:15:47.498+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.240 seconds
+[2026-05-09T00:16:18.397+0000] {processor.py:161} INFO - Started process (PID=8785) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:16:18.405+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:16:18.411+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:16:18.410+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:16:18.454+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:16:18.538+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:16:18.538+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:16:18.597+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:16:18.597+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:16:18.660+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.288 seconds
+[2026-05-09T00:16:49.126+0000] {processor.py:161} INFO - Started process (PID=8793) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:16:49.128+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:16:49.130+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:16:49.129+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:16:49.176+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:16:49.345+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:16:49.344+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:16:49.495+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:16:49.495+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:16:49.579+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.466 seconds
+[2026-05-09T00:17:19.906+0000] {processor.py:161} INFO - Started process (PID=8806) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:17:19.908+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:17:19.913+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:17:19.912+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:17:19.968+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:17:20.069+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:17:20.068+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:17:20.125+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:17:20.124+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:17:20.213+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.323 seconds
+[2026-05-09T00:17:51.117+0000] {processor.py:161} INFO - Started process (PID=8814) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:17:51.136+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:17:51.142+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:17:51.141+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:17:51.290+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:17:51.542+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:17:51.541+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:17:51.873+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:17:51.857+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:17:52.022+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.939 seconds
+[2026-05-09T00:18:23.093+0000] {processor.py:161} INFO - Started process (PID=8828) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:18:23.104+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:18:23.116+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:18:23.115+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:18:23.311+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:18:23.574+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:18:23.574+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:18:23.767+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:18:23.755+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:18:23.892+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.823 seconds
+[2026-05-09T00:18:54.566+0000] {processor.py:161} INFO - Started process (PID=8841) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:18:54.570+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:18:54.573+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:18:54.572+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:18:54.677+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:18:54.882+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:18:54.881+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:18:55.006+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:18:55.005+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:18:55.065+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.522 seconds
+[2026-05-09T00:19:25.580+0000] {processor.py:161} INFO - Started process (PID=8850) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:19:25.582+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:19:25.585+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:19:25.584+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:19:25.632+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:19:25.698+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:19:25.698+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:19:25.737+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:19:25.736+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:19:25.780+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.222 seconds
+[2026-05-09T00:19:56.550+0000] {processor.py:161} INFO - Started process (PID=8864) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:19:56.556+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:19:56.569+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:19:56.562+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:19:56.662+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:19:56.791+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:19:56.791+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:19:56.825+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:19:56.825+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:19:56.861+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.367 seconds
+[2026-05-09T00:20:27.305+0000] {processor.py:161} INFO - Started process (PID=8873) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:20:27.307+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:20:27.309+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:20:27.308+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:20:27.344+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:20:27.417+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:20:27.416+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:20:27.520+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:20:27.520+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:20:27.579+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.284 seconds
+[2026-05-09T00:20:58.961+0000] {processor.py:161} INFO - Started process (PID=8887) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:20:58.967+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:20:58.970+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:20:58.969+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:20:59.316+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:20:59.660+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:20:59.659+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:20:59.796+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:20:59.784+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:20:59.877+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.969 seconds
+[2026-05-09T00:21:01.357+0000] {processor.py:161} INFO - Started process (PID=8888) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:21:01.363+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:21:01.370+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:21:01.369+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:21:01.563+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:21:01.982+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:21:01.982+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:21:02.229+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:21:02.225+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:21:02.618+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 1.285 seconds
+[2026-05-09T00:21:33.057+0000] {processor.py:161} INFO - Started process (PID=8897) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:21:33.058+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:21:33.061+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:21:33.060+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:21:33.126+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:21:33.213+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:21:33.213+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:21:33.268+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:21:33.268+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:21:33.301+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.253 seconds
+[2026-05-09T00:22:04.025+0000] {processor.py:161} INFO - Started process (PID=8911) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:22:04.026+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:22:04.029+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:22:04.028+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:22:04.151+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:22:04.281+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:22:04.281+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:22:04.371+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:22:04.370+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:22:04.475+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.459 seconds
+[2026-05-09T00:22:35.044+0000] {processor.py:161} INFO - Started process (PID=8919) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:22:35.051+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:22:35.065+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:22:35.062+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:22:35.152+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:22:35.240+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:22:35.240+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:22:35.276+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:22:35.275+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:22:35.306+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.351 seconds
+[2026-05-09T00:23:07.277+0000] {processor.py:161} INFO - Started process (PID=8933) to work on /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:23:07.279+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_job_intelligent .py for tasks to queue
+[2026-05-09T00:23:07.281+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:23:07.281+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:23:07.346+0000] {processor.py:840} INFO - DAG(s) 'job_intelligent_pipeline' retrieved from /opt/airflow/dags/dag_job_intelligent .py
+[2026-05-09T00:23:07.460+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:23:07.459+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-05-09T00:23:07.516+0000] {logging_mixin.py:188} INFO - [2026-05-09T00:23:07.515+0000] {dag.py:3954} INFO - Setting next_dagrun for job_intelligent_pipeline to 2026-05-08 06:00:00+00:00, run_after=2026-05-09 06:00:00+00:00
+[2026-05-09T00:23:07.549+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_job_intelligent .py took 0.282 seconds

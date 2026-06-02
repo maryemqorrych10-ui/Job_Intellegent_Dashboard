@@ -1,0 +1,22 @@
+[2026-05-08T23:23:46.197+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-08T23:23:46.415+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-05-08T23:12:10.101482+00:00 [queued]>
+[2026-05-08T23:23:46.445+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-05-08T23:12:10.101482+00:00 [queued]>
+[2026-05-08T23:23:46.452+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-08T23:23:46.500+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_rekrute> on 2026-05-08 23:12:10.101482+00:00
+[2026-05-08T23:23:46.508+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=5258) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-08T23:23:46.511+0000] {standard_task_runner.py:63} INFO - Started process 5261 to run task
+[2026-05-08T23:23:46.523+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'scrape_rekrute', 'manual__2026-05-08T23:12:10.101482+00:00', '--job-id', '458', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent .py', '--cfg-path', '/tmp/tmp2hg5lp65']
+[2026-05-08T23:23:46.526+0000] {standard_task_runner.py:91} INFO - Job 458: Subtask scrape_rekrute
+[2026-05-08T23:23:46.850+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-05-08T23:12:10.101482+00:00 [running]> on host 82bd505ce5dd
+[2026-05-08T23:23:47.311+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='scrape_rekrute' AIRFLOW_CTX_EXECUTION_DATE='2026-05-08T23:12:10.101482+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-08T23:12:10.101482+00:00'
+[2026-05-08T23:23:47.314+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-08T23:23:47.364+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper_api:8000/scrape/rekrute
+[2026-05-08T23:23:51.000+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute erreur : HTTPConnectionPool(host='scraper_api', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fba05eddf10>: Failed to resolve 'scraper_api' ([Errno -2] Name or service not known)"))
+[2026-05-08T23:23:51.002+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fba05eddf10>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-05-08T23:23:51.129+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fba05eddf10>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-05-08T23:23:51.136+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-08T23:23:51.463+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline, task_id=scrape_rekrute, run_id=manual__2026-05-08T23:12:10.101482+00:00, execution_date=20260508T231210, start_date=20260508T232346, end_date=20260508T232351
+[2026-05-08T23:23:51.767+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-08T23:23:51.836+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,380 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* Reset des marges pour occuper toute la largeur */
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: 'Inter', sans-serif;
+    }
+    /* Le wrapper principal : flex sans marge */
+    .dashboard-wrapper {
+        width: 100%;
+        min-height: calc(100vh - 70px); /* ajuste selon hauteur de la navbar */
+        display: flex;
+        gap: 0;
+    }
+    /* Sidebar gauche */
+    .sidebar {
+        width: 280px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+        padding: 2rem 0;
+        border-radius: 0 20px 20px 0;
+    }
+    .sidebar .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 24px;
+        color: #1f2937;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        border-radius: 0 30px 30px 0;
+        margin-right: 10px;
+    }
+    .sidebar .nav-link i {
+        width: 24px;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .sidebar .nav-link.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .sidebar .nav-link:hover:not(.active) {
+        background: rgba(0,0,0,0.05);
+        transform: translateX(5px);
+    }
+    /* Zone de contenu principal */
+    .content-area {
+        flex: 1;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        overflow-y: auto;
+    }
+    /* Cartes et formulaires */
+    .card {
+        background: white;
+        border: none;
+        border-radius: 24px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .form-control, .form-select {
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        padding: 0.6rem 1rem;
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102,126,234,0.2);
+    }
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 40px;
+        padding: 0.6rem;
+        font-weight: 600;
+        transition: transform 0.2s;
+    }
+    .btn-primary:hover {
+        transform: scale(1.02);
+        background: linear-gradient(135deg, #7b8aec 0%, #8b5cb8 100%);
+    }
+    /* Animation d'apparition des onglets */
+    .tab-pane {
+        animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    /* Responsive : empilement sur mobile */
+    @media (max-width: 768px) {
+        .dashboard-wrapper {
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 100%;
+            border-radius: 0;
+            padding: 1rem;
+        }
+        .sidebar .nav-link {
+            display: inline-block;
+            text-align: center;
+            margin: 0 5px;
+            border-radius: 30px;
+        }
+        .content-area {
+            padding: 1rem;
+        }
+    }
+</style>
+
+<div class="dashboard-wrapper">
+    <!-- Sidebar avec icônes (FontAwesome) -->
+    <div class="sidebar">
+        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="search-tab" data-bs-toggle="tab" data-bs-target="#search" type="button" role="tab">
+                    <i class="fas fa-search"></i> Recherche
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="upload-tab" data-bs-toggle="tab" data-bs-target="#upload" type="button" role="tab">
+                    <i class="fas fa-upload"></i> Upload CV
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab">
+                    <i class="fas fa-history"></i> Historique
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button" role="tab">
+                    <i class="fas fa-chart-line"></i> Statistiques
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="prefs-tab" data-bs-toggle="tab" data-bs-target="#prefs" type="button" role="tab">
+                    <i class="fas fa-sliders-h"></i> Préférences
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="content-area">
+        <div class="tab-content">
+            <!-- ==================== ONGLET RECHERCHE ==================== -->
+            <div class="tab-pane fade show active" id="search" role="tabpanel">
+                <div class="card">
+                    <form method="post" action="/recommend">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Compétences (séparées par des virgules)</label>
+                            <input type="text" name="competences" class="form-control" 
+                                   value="{{ prefs.competences|join(', ') if prefs.competences else 'python, sql, spark' }}" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Ville</label>
+                                <input type="text" name="ville" class="form-control" value="{{ prefs.ville or '' }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-check mt-4">
+                                    <input type="checkbox" name="teletravail" class="form-check-input" 
+                                           {% if prefs.teletravail %}checked{% endif %}>
+                                    <label class="form-check-label">Télétravail</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Type de contrat</label>
+                                <select name="type_contrat" class="form-select">
+                                    <option value="">Tous</option>
+                                    <option {% if prefs.type_contrat == 'CDI' %}selected{% endif %}>CDI</option>
+                                    <option {% if prefs.type_contrat == 'CDD' %}selected{% endif %}>CDD</option>
+                                    <option {% if prefs.type_contrat == 'Freelance' %}selected{% endif %}>Freelance</option>
+                                    <option {% if prefs.type_contrat == 'Stage' %}selected{% endif %}>Stage</option>
+                                    <option {% if prefs.type_contrat == 'Alternance' %}selected{% endif %}>Alternance</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Niveau d'expérience</label>
+                                <select name="niveau_exp" class="form-select">
+                                    <option value="">Tous</option>
+                                    <option {% if prefs.niveau_experience == 'Junior (0-2 ans)' %}selected{% endif %}>Junior (0-2 ans)</option>
+                                    <option {% if prefs.niveau_experience == 'Confirmé (3-5 ans)' %}selected{% endif %}>Confirmé (3-5 ans)</option>
+                                    <option {% if prefs.niveau_experience == 'Senior (5+ ans)' %}selected{% endif %}>Senior (5+ ans)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100"> Rechercher</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ==================== ONGLET UPLOAD CV ==================== -->
+            <div class="tab-pane fade" id="upload" role="tabpanel">
+                <div class="card">
+                    <form method="post" action="/upload_cv" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label class="form-label">Téléchargez votre CV (PDF ou DOCX)</label>
+                            <input type="file" name="cv" class="form-control" accept=".pdf,.docx" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Ville (optionnelle)</label>
+                                <input type="text" name="ville" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-check mt-4">
+                                    <input type="checkbox" name="teletravail" class="form-check-input">
+                                    <label class="form-check-label">Télétravail</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Type de contrat</label>
+                                <select name="type_contrat" class="form-select">
+                                    <option value="">Tous</option>
+                                    <option>CDI</option><option>CDD</option><option>Freelance</option>
+                                    <option>Stage</option><option>Alternance</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Niveau d'expérience</label>
+                                <select name="niveau_exp" class="form-select">
+                                    <option value="">Tous</option>
+                                    <option>Junior (0-2 ans)</option>
+                                    <option>Confirmé (3-5 ans)</option>
+                                    <option>Senior (5+ ans)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100"> Analyser CV et recommander</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ==================== ONGLET HISTORIQUE ==================== -->
+            <div class="tab-pane fade" id="history" role="tabpanel">
+                <div class="card">
+                    <h3 class="mb-3"> Mes dernières recherches</h3>
+                    <div id="historyList">Chargement...</div>
+                </div>
+            </div>
+
+            <!-- ==================== ONGLET STATISTIQUES ==================== -->
+            <div class="tab-pane fade" id="stats" role="tabpanel">
+                <div class="card">
+                    <h3 class="mb-3"> Évolution des offres (30 derniers jours)</h3>
+                    <canvas id="offersChart" height="200"></canvas>
+                </div>
+            </div>
+
+            <!-- ==================== ONGLET PRÉFÉRENCES ==================== -->
+            <div class="tab-pane fade" id="prefs" role="tabpanel">
+                <div class="card">
+                    <form method="post" action="/update_preferences">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Mes compétences</label>
+                            <input type="text" name="competences" class="form-control" 
+                                   value="{{ prefs.competences|join(', ') if prefs.competences else '' }}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Ville préférée</label>
+                                <input type="text" name="ville" class="form-control" value="{{ prefs.ville or '' }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-check mt-4">
+                                    <input type="checkbox" name="teletravail" class="form-check-input" 
+                                           {% if prefs.teletravail %}checked{% endif %}>
+                                    <label class="form-check-label">Accepter télétravail</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Type de contrat préféré</label>
+                                <select name="type_contrat" class="form-select">
+                                    <option value="">Tous</option>
+                                    <option {% if prefs.type_contrat == 'CDI' %}selected{% endif %}>CDI</option>
+                                    <option {% if prefs.type_contrat == 'CDD' %}selected{% endif %}>CDD</option>
+                                    <option {% if prefs.type_contrat == 'Freelance' %}selected{% endif %}>Freelance</option>
+                                    <option {% if prefs.type_contrat == 'Stage' %}selected{% endif %}>Stage</option>
+                                    <option {% if prefs.type_contrat == 'Alternance' %}selected{% endif %}>Alternance</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Niveau d'expérience</label>
+                                <select name="niveau_exp" class="form-select">
+                                    <option value="">Tous</option>
+                                    <option {% if prefs.niveau_experience == 'Junior (0-2 ans)' %}selected{% endif %}>Junior (0-2 ans)</option>
+                                    <option {% if prefs.niveau_experience == 'Confirmé (3-5 ans)' %}selected{% endif %}>Confirmé (3-5 ans)</option>
+                                    <option {% if prefs.niveau_experience == 'Senior (5+ ans)' %}selected{% endif %}>Senior (5+ ans)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" name="notifications" class="form-check-input" 
+                                   {% if notif_enabled %}checked{% endif %}>
+                            <label class="form-check-label">Recevoir des offres par email</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100"> Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts pour historique et graphique -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Chargement de l'historique utilisateur
+fetch('/user/history')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('historyList');
+    if (!data || data.length === 0) {
+      container.innerHTML = '<p>Aucune recherche enregistrée.</p>';
+      return;
+    }
+    let html = '<ul class="list-group">';
+    data.forEach(item => {
+      html += `<li class="list-group-item">
+        <strong>${new Date(item.searched_at).toLocaleString()}</strong><br>
+        Compétences: ${item.search_criteria.competences?.join(', ') || 'aucune'}<br>
+        Offres trouvées: ${item.results_count}
+      </li>`;
+    });
+    html += '</ul>';
+    container.innerHTML = html;
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById('historyList').innerHTML = '<p>Erreur de chargement.</p>';
+  });
+
+// Graphique des offres par jour
+fetch('/stats/offers_per_day')
+  .then(res => res.json())
+  .then(data => {
+    const ctx = document.getElementById('offersChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.map(item => item.date),
+        datasets: [{
+          label: 'Offres par jour',
+          data: data.map(item => item.count),
+          borderColor: '#667eea',
+          backgroundColor: 'rgba(102, 126, 234, 0.1)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 4,
+          pointBackgroundColor: '#764ba2'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: { position: 'top' }
+        }
+      }
+    });
+  })
+  .catch(err => console.error('Erreur graphique:', err));
+</script>
+{% endblock %}

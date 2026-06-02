@@ -1,0 +1,32 @@
+[2026-05-17T00:49:21.374+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-17T00:49:21.500+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.check_quality manual__2026-05-17T00:47:17.533201+00:00 [queued]>
+[2026-05-17T00:49:21.562+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.check_quality manual__2026-05-17T00:47:17.533201+00:00 [queued]>
+[2026-05-17T00:49:21.564+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-17T00:49:21.668+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): check_quality> on 2026-05-17 00:47:17.533201+00:00
+[2026-05-17T00:49:21.680+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=200) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-17T00:49:21.687+0000] {standard_task_runner.py:63} INFO - Started process 201 to run task
+[2026-05-17T00:49:21.689+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'check_quality', 'manual__2026-05-17T00:47:17.533201+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpje0mojbl']
+[2026-05-17T00:49:21.703+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask check_quality
+[2026-05-17T00:49:22.114+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.check_quality manual__2026-05-17T00:47:17.533201+00:00 [running]> on host f27312ab664d
+[2026-05-17T00:49:22.873+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='check_quality' AIRFLOW_CTX_EXECUTION_DATE='2026-05-17T00:47:17.533201+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-17T00:47:17.533201+00:00'
+[2026-05-17T00:49:22.888+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-17T00:49:23.152+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-05-17T00:49:23.156+0000] {logging_mixin.py:188} INFO -   RAPPORT PIPELINE JOB INTELLIGENT
+[2026-05-17T00:49:23.157+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-05-17T00:49:23.310+0000] {logging_mixin.py:188} INFO -   Rekrute        : {'status': 'erreur', 'message': "HTTPConnectionPool(host='scraper-api', port=8000): Read timed out. (read timeout=30)"}
+[2026-05-17T00:49:23.383+0000] {logging_mixin.py:188} INFO -   France Travail : {'status': 'success', 'data': {'scraped': 500, 'minio_path': 'france_travail/2026-05-17/c56d31bf-7064-42bc-8415-baf128b7deed.json'}}
+[2026-05-17T00:49:23.446+0000] {logging_mixin.py:188} INFO -   Adzuna         : {'status': 'erreur', 'message': "HTTPConnectionPool(host='scraper-api', port=8000): Read timed out. (read timeout=30)"}
+[2026-05-17T00:49:23.452+0000] {logging_mixin.py:188} INFO -   Offres brutes lues depuis MinIO : 3002
+[2026-05-17T00:49:23.453+0000] {logging_mixin.py:188} INFO -   ETL transformés : 2976
+[2026-05-17T00:49:23.454+0000] {logging_mixin.py:188} INFO -   MySQL chargées  : 0
+[2026-05-17T00:49:23.462+0000] {logging_mixin.py:188} INFO -   Doublons        : 0
+[2026-05-17T00:49:23.463+0000] {logging_mixin.py:188} INFO -   Erreurs         : 0
+[2026-05-17T00:49:23.464+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-05-17T00:49:23.465+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'success'}
+[2026-05-17T00:49:23.467+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-17T00:49:23.563+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=check_quality, run_id=manual__2026-05-17T00:47:17.533201+00:00, execution_date=20260517T004717, start_date=20260517T004921, end_date=20260517T004923
+[2026-05-17T00:49:23.646+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-17T00:49:23.731+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-17T00:49:23.748+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

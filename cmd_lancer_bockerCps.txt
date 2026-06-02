@@ -1,0 +1,60 @@
+docker-compose -p job_intelligent up -d
+
+activee venv:
+scraper_env\Scripts\activate
+
+
+creation d'un topic dans kafka :
+docker exec -it prjtdatawarehousedatalake-kafka-1 kafka-topics --bootstrap-server localhost:9092 --create --topic raw_jobs_rekrute --partitions 1 --replication-factor 1
+
+
+
+  lister les topick de kafka :
+  docker exec -it prjtdatawarehousedatalake-kafka-1 kafka-topics --bootstrap-server localhost:9092 --list
+
+
+
+  pour run code teste 
+  (scraper_env) C:\Users\user\OneDrive\Desktop\prjt data warehouse data lake>docker compose run --rm scraper-api sh -c "python -m scrapers.rekrute_scraper"
+
+
+
+  docker compose run --rm scraper-api sh -c "python -m scrapers.scraper_recruteAutre"
+
+  docker compose run --rm scraper-api sh -c "python scripts/load_star_schema.py"
+
+  docker compose run --rm scraper-api sh -c "python scripts/load_star_schema.py"
+
+
+pour suprimmer un grp de consummer 
+docker compose exec kafka kafka-consumer-groups --bootstrap-server kafka:9092 --group etl_consumer_group --describe
+
+
+pour cree les table :
+docker compose exec -T mysql mysql -u root -prootpassword jobs_db < sql/init_jobs_schema.sql
+
+docker compose exec mysql mysql -u root -prootpassword -e "USE jobs_db; SHOW TABLES;"
+
+docker compose run --rm scraper-api python scripts/kafka_pipeline.py
+
+pour tester my sql
+
+docker exec -it job_intellegent_dashboard-main-mysql-1 mysql -u jobs_user -pjobspassword
+USE jobs_db;
+SELECT COUNT(*) FROM fact_offres;
+
+
+pour moteur de recommandation 
+pip install streamlit pandas sqlalchemy mysql-connector-python fastapi uvicorn requests
+pip install spacy textract python-docx PyPDF2  # pour l'extraction de CV
+python -m spacy download fr_core_news_md   # modèle français
+
+
+
+comment app fonctionne ?
+ premierement lancer :recommendation_api.py
+ aprés lancer : python app.py
+ et pour verifier l'envoi des notification sur l'email apres l'autontification sur app aller a airflow et declencher le dag 
+ send_job_notifications
+
+ 

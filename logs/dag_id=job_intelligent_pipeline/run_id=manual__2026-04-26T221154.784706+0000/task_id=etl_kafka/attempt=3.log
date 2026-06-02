@@ -1,0 +1,40 @@
+[2026-04-26T22:35:30.118+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-26T22:35:30.168+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-26T22:11:54.784706+00:00 [queued]>
+[2026-04-26T22:35:30.188+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-26T22:11:54.784706+00:00 [queued]>
+[2026-04-26T22:35:30.190+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2026-04-26T22:35:30.238+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_kafka> on 2026-04-26 22:11:54.784706+00:00
+[2026-04-26T22:35:30.260+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=439) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-26T22:35:30.267+0000] {standard_task_runner.py:63} INFO - Started process 440 to run task
+[2026-04-26T22:35:30.269+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'etl_kafka', 'manual__2026-04-26T22:11:54.784706+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmp__pjavqf']
+[2026-04-26T22:35:30.289+0000] {standard_task_runner.py:91} INFO - Job 47: Subtask etl_kafka
+[2026-04-26T22:35:30.458+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-26T22:11:54.784706+00:00 [running]> on host 31133b84880c
+[2026-04-26T22:35:30.933+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='etl_kafka' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T22:11:54.784706+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-26T22:11:54.784706+00:00'
+[2026-04-26T22:35:30.936+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-26T22:35:30.970+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-26T22:35:30.971+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 460, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_job_intelligent.py", line 162, in task_etl_kafka
+    from kafka import KafkaConsumer
+ModuleNotFoundError: No module named 'kafka'
+[2026-04-26T22:35:31.007+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=job_intelligent_pipeline, task_id=etl_kafka, run_id=manual__2026-04-26T22:11:54.784706+00:00, execution_date=20260426T221154, start_date=20260426T223530, end_date=20260426T223531
+[2026-04-26T22:35:31.034+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 47 for task etl_kafka (No module named 'kafka'; 440)
+[2026-04-26T22:35:31.059+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-04-26T22:35:31.142+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-26T22:35:31.162+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

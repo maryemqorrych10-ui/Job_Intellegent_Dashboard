@@ -1,0 +1,24 @@
+[2026-05-11T16:02:36.233+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T16:02:36.472+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.load_star_schema manual__2026-05-11T15:48:24.870736+00:00 [queued]>
+[2026-05-11T16:02:36.500+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.load_star_schema manual__2026-05-11T15:48:24.870736+00:00 [queued]>
+[2026-05-11T16:02:36.502+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T16:02:36.554+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_star_schema> on 2026-05-11 15:48:24.870736+00:00
+[2026-05-11T16:02:36.577+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'load_star_schema', 'manual__2026-05-11T15:48:24.870736+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmp_2pvf5dm']
+[2026-05-11T16:02:36.568+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T16:02:36.582+0000] {standard_task_runner.py:91} INFO - Job 40: Subtask load_star_schema
+[2026-05-11T16:02:36.582+0000] {standard_task_runner.py:63} INFO - Started process 75 to run task
+[2026-05-11T16:02:36.798+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.load_star_schema manual__2026-05-11T15:48:24.870736+00:00 [running]> on host 4ce668e058c0
+[2026-05-11T16:02:37.270+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='load_star_schema' AIRFLOW_CTX_EXECUTION_DATE='2026-05-11T15:48:24.870736+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-11T15:48:24.870736+00:00'
+[2026-05-11T16:02:37.286+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T16:02:37.881+0000] {logging_mixin.py:188} INFO - [Load] Erreur source rekrute: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /gold, request_id: 18AE8E4B85DD8F4C, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: gold
+[2026-05-11T16:02:37.887+0000] {logging_mixin.py:188} INFO - [Load] Erreur source france_travail: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /gold, request_id: 18AE8E4B865040F9, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: gold
+[2026-05-11T16:02:37.891+0000] {logging_mixin.py:188} INFO - [Load] Erreur source adzuna: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /gold, request_id: 18AE8E4B86A009F6, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: gold
+[2026-05-11T16:02:37.892+0000] {logging_mixin.py:188} INFO - [Load] 0 offres lues depuis MinIO gold
+[2026-05-11T16:02:37.945+0000] {python.py:237} INFO - Done. Returned value was: {'charge': 0}
+[2026-05-11T16:02:37.947+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T16:02:38.083+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=load_star_schema, run_id=manual__2026-05-11T15:48:24.870736+00:00, execution_date=20260511T154824, start_date=20260511T160236, end_date=20260511T160238
+[2026-05-11T16:02:38.153+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-11T16:02:38.237+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T16:02:38.240+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

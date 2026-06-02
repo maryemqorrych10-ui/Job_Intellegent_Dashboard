@@ -1,0 +1,23 @@
+[2026-04-29T21:51:38.853+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-29T21:51:39.191+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-04-29T20:11:35+00:00 [queued]>
+[2026-04-29T21:51:39.339+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-04-29T20:11:35+00:00 [queued]>
+[2026-04-29T21:51:39.351+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-29T21:51:39.724+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_rekrute> on 2026-04-29 20:11:35+00:00
+[2026-04-29T21:51:39.747+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3295) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-29T21:51:39.777+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'scrape_rekrute', 'manual__2026-04-29T20:11:35+00:00', '--job-id', '189', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmpeqexv9d8']
+[2026-04-29T21:51:39.818+0000] {standard_task_runner.py:63} INFO - Started process 3306 to run task
+[2026-04-29T21:51:39.822+0000] {standard_task_runner.py:91} INFO - Job 189: Subtask scrape_rekrute
+[2026-04-29T21:51:40.280+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-04-29T20:11:35+00:00 [running]> on host 00190f46936a
+[2026-04-29T21:51:42.358+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='scrape_rekrute' AIRFLOW_CTX_EXECUTION_DATE='2026-04-29T20:11:35+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-29T20:11:35+00:00'
+[2026-04-29T21:51:42.362+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-29T21:51:42.576+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper_api:8000/scraper/rekrute
+[2026-04-29T21:51:46.013+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute erreur : HTTPConnectionPool(host='scraper_api', port=8000): Max retries exceeded with url: /scraper/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f5d46e59f10>: Failed to resolve 'scraper_api' ([Errno -2] Name or service not known)"))
+[2026-04-29T21:51:46.017+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scraper/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f5d46e59f10>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-29T21:51:46.191+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scraper/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f5d46e59f10>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-29T21:51:46.206+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-29T21:51:46.605+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline, task_id=scrape_rekrute, run_id=manual__2026-04-29T20:11:35+00:00, execution_date=20260429T201135, start_date=20260429T215139, end_date=20260429T215146
+[2026-04-29T21:51:46.877+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-29T21:51:47.178+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-29T21:51:47.204+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

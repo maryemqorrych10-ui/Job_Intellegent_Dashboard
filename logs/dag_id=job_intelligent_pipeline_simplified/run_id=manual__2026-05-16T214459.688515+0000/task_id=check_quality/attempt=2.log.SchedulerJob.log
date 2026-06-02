@@ -1,0 +1,1 @@
+[2026-05-16T22:40:23.768+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: job_intelligent_pipeline_simplified.check_quality manual__2026-05-16T21:44:59.688515+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

@@ -1,0 +1,391 @@
+# =============================================================================
+#  PROJET JOB INTELLIGENT — Stack Complète (VERSION FINALE CORRIGÉE)
+# =============================================================================
+#  CORRECTIONS APPLIQUÉES :
+#  1. image: apache/airflow:2.9.2 (pas de build)
+#  2. Suppression AIRFLOW__CORE__EXECUTION_API_SERVER_URL (3.x uniquement)
+#  3. Suppression AIRFLOW__CORE__AUTH_MANAGER (3.x uniquement)
+#  4. airflow-apiserver → airflow-webserver avec command: webserver
+#  5. healthcheck webserver → /health + start_period 120s
+#  6. airflow-dag-processor supprimé (3.x uniquement)
+#  7. airflow db upgrade (au lieu de db migrate)
+#  8. AIRFLOW__WEBSERVER__WORKERS: 2 pour économiser la RAM
+#  9. AIRFLOW__WEBSERVER__WEB_SERVER_WORKER_TIMEOUT: 300
+#  10. MySQL: paramètres mémoire optimisés
+# =============================================================================
+
+x-airflow-common:
+  &airflow-common
+  build:
+    context: .
+    dockerfile: Dockerfile.airflow
+  env_file:
+    - .env
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__WEBSERVER__BASE_URL: http://localhost:8080
+    AIRFLOW__WEBSERVER__WORKERS: 2
+    AIRFLOW__WEBSERVER__WEB_SERVER_WORKER_TIMEOUT: 300
+    AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres/${POSTGRES_DB:-airflow}
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres/${POSTGRES_DB:-airflow}
+    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+    AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER:-minioadmin}
+    AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin123}
+    MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+    MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin123}
+    SMTP_SERVER: ${SMTP_SERVER}
+    SMTP_PORT: ${SMTP_PORT}
+    SMTP_USER: ${SMTP_USER}
+    SMTP_PASSWORD: ${SMTP_PASSWORD}
+    MINIO_ENDPOINT: http://minio:9000
+  
+    MYSQL_HOST: mysql
+    MYSQL_PORT: "3306"
+    MYSQL_DB: jobs_db
+    MYSQL_USER: jobs_user
+    MYSQL_PASSWORD: ${MYSQL_PASSWORD:-jobspassword}
+    
+  volumes:
+    - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
+    - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    - ${AIRFLOW_PROJ_DIR:-.}/scripts:/opt/airflow/scripts
+    - ${AIRFLOW_PROJ_DIR:-.}/models:/opt/airflow/models
+  user: "${AIRFLOW_UID:-50000}:0"
+  networks:
+    - job_network
+  depends_on:
+    &airflow-common-depends-on
+    redis:
+      condition: service_healthy
+    postgres:
+      condition: service_healthy
+
+# =============================================================================
+services:
+
+ 
+  # ───────────────────────────────────────────────────────────────────────────
+  #  SCRAPER API
+  # ───────────────────────────────────────────────────────────────────────────
+  scraper-api:
+    build:
+      context: ./scraper
+    ports:
+      - "8000:8000"
+    environment:
+      
+      FRANCE_TRAVAIL_CLIENT_ID: ${FRANCE_TRAVAIL_CLIENT_ID:-}
+      FRANCE_TRAVAIL_CLIENT_SECRET: ${FRANCE_TRAVAIL_CLIENT_SECRET:-}
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin123}
+      MINIO_BUCKET_RAW: raw
+    volumes:
+      - ${AIRFLOW_PROJ_DIR:-.}/scraper:/app
+    depends_on:
+      
+      minio:
+        condition: service_healthy
+    restart: always
+    networks:
+      - job_network
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  MINIO
+  # ───────────────────────────────────────────────────────────────────────────
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    ports:
+      - "9003:9003"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin123}
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: always
+    networks:
+      - job_network
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  MINIO INIT
+  # ───────────────────────────────────────────────────────────────────────────
+  minio-init:
+    image: minio/mc:latest
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: /bin/sh
+    command:
+
+        - -c
+        - |
+          mc alias set local http://minio:9000 ${MINIO_ROOT_USER:-minioadmin} ${MINIO_ROOT_PASSWORD:-minioadmin123}
+          mc mb --ignore-existing local/raw
+          mc mb --ignore-existing local/silver    # ← ajouter
+          mc mb --ignore-existing local/gold      # ← ajouter
+          mc mb --ignore-existing local/processed
+          mc mb --ignore-existing local/models
+          mc mb --ignore-existing local/exports
+          echo '>>> Buckets OK'
+    restart: on-failure
+    networks:
+      - job_network
+
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  MYSQL
+  # ───────────────────────────────────────────────────────────────────────────
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: jobs_db
+      MYSQL_USER: jobs_user
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-jobspassword}
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql-jobs-volume:/var/lib/mysql
+      - ${AIRFLOW_PROJ_DIR:-.}/sql/init_jobs_schema.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    command: >
+      --innodb-buffer-pool-size=256M
+      --innodb-log-file-size=64M
+      --max-connections=50
+      --performance-schema=OFF
+      --skip-name-resolve
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "--silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    restart: always
+    networks:
+      - job_network
+
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  REDIS
+  # ───────────────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7.2-bookworm
+    expose:
+      - 6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+      start_period: 10s
+    restart: always
+    networks:
+      - job_network
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  AIRFLOW INIT
+  # ───────────────────────────────────────────────────────────────────────────
+  airflow-init:
+    <<: *airflow-common
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        export PATH=$$PATH:/home/airflow/.local/bin
+        echo "=== Vérification ressources ==="
+        one_meg=1048576
+        mem_available=$$(($$(getconf _PHYS_PAGES) * $$(getconf PAGE_SIZE) / one_meg))
+        cpus_available=$$(grep -cE 'cpu[0-9]+' /proc/stat)
+        if (( mem_available < 4000 )) ; then
+          echo "WARNING: Mémoire < 4GB (disponible: $${mem_available}MB)"
+        fi
+        if (( cpus_available < 2 )); then
+          echo "WARNING: CPUs < 2 (disponible: $${cpus_available})"
+        fi
+        echo "=== Création des dossiers ==="
+        mkdir -p /opt/airflow/{logs,dags,plugins,config,scripts,models}
+        echo "=== Version Airflow ==="
+        airflow version
+        echo "=== Migration base de données ==="
+        airflow db upgrade
+        echo "=== Création compte admin ==="
+        airflow users create \
+          --username "$${_AIRFLOW_WWW_USER_USERNAME:-airflow}" \
+          --password "$${_AIRFLOW_WWW_USER_PASSWORD:-airflow}" \
+          --firstname Admin \
+          --lastname User \
+          --role Admin \
+          --email admin@example.com || echo "Utilisateur déjà existant, skip."
+        echo "=== Permissions ==="
+        chown -R "$${AIRFLOW_UID:-50000}:0" /opt/airflow/
+        echo "=== Init terminé ==="
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+      _PIP_ADDITIONAL_REQUIREMENTS: 'requests minio mysql-connector-python boto3 sqlalchemy'
+    user: "0:0"
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  AIRFLOW WEBSERVER
+  # ───────────────────────────────────────────────────────────────────────────
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8080:8080"
+    environment:
+      <<: *airflow-common-env
+      AIRFLOW__WEBSERVER__WORKERS: 1
+      AIRFLOW__WEBSERVER__WEB_SERVER_WORKER_TIMEOUT: 300
+      AIRFLOW__WEBSERVER__WEB_SERVER_MASTER_TIMEOUT: 300 
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 20s
+      retries: 10
+      start_period: 180s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  AIRFLOW SCHEDULER
+  # ───────────────────────────────────────────────────────────────────────────
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  AIRFLOW WORKER
+  # ───────────────────────────────────────────────────────────────────────────
+  airflow-worker:
+    <<: *airflow-common
+    command: celery worker
+    healthcheck:
+      test:
+        - "CMD-SHELL"
+        - 'celery --app airflow.providers.celery.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}" || celery --app airflow.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"'
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    environment:
+      <<: *airflow-common-env
+      DUMB_INIT_SETSID: "0"
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-webserver:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  AIRFLOW TRIGGERER
+  # ───────────────────────────────────────────────────────────────────────────
+  airflow-triggerer:
+    <<: *airflow-common
+    command: triggerer
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  AIRFLOW CLI (optionnel — docker-compose --profile debug up)
+  # ───────────────────────────────────────────────────────────────────────────
+  airflow-cli:
+    <<: *airflow-common
+    profiles:
+      - debug
+    environment:
+      <<: *airflow-common-env
+      CONNECTION_CHECK_MAX_COUNT: "0"
+    command:
+      - bash
+      - -c
+      - airflow
+    depends_on:
+      <<: *airflow-common-depends-on
+
+  # ───────────────────────────────────────────────────────────────────────────
+  #  FLOWER (optionnel — docker-compose --profile flower up)
+  # ───────────────────────────────────────────────────────────────────────────
+  flower:
+    <<: *airflow-common
+    command: celery flower
+    profiles:
+      - flower
+    ports:
+      - "5555:5555"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5555/"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+  
+  
+# =============================================================================
+volumes:
+  postgres-db-volume:
+    name: airflow_postgres_data
+  mysql-jobs-volume:
+    name: jobs_mysql_data
+  minio-data:
+    name: jobs_minio_data
+  grafana-data:
+    name: jobs_grafana_data
+
+
+networks:
+  job_network:
+    name: job_intelligent_network
+    driver: bridge

@@ -1,0 +1,98 @@
+[2026-04-27T01:36:34.568+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T01:36:34.695+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T01:34:41.436277+00:00 [queued]>
+[2026-04-27T01:36:34.724+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T01:34:41.436277+00:00 [queued]>
+[2026-04-27T01:36:34.726+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-27T01:36:34.780+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_kafka> on 2026-04-27 01:34:41.436277+00:00
+[2026-04-27T01:36:34.796+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=380) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-27T01:36:34.804+0000] {standard_task_runner.py:63} INFO - Started process 381 to run task
+[2026-04-27T01:36:34.807+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'etl_kafka', 'manual__2026-04-27T01:34:41.436277+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmp8u9jed05']
+[2026-04-27T01:36:34.811+0000] {standard_task_runner.py:91} INFO - Job 78: Subtask etl_kafka
+[2026-04-27T01:36:34.959+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T01:34:41.436277+00:00 [running]> on host 29da1de14b83
+[2026-04-27T01:36:35.242+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='etl_kafka' AIRFLOW_CTX_EXECUTION_DATE='2026-04-27T01:34:41.436277+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-27T01:34:41.436277+00:00'
+[2026-04-27T01:36:35.244+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T01:36:47.659+0000] {logging_mixin.py:188} INFO - [ETL] Connexion Kafka : kafka:9092
+[2026-04-27T01:36:47.664+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T01:36:47.681+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.18.0.3', 9092)]>: Broker version identified as 2.6
+[2026-04-27T01:36:47.683+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T01:36:47.697+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('raw_jobs_rekrute', 'raw_jobs_france_travail', 'raw_jobs_adzuna', 'raw_jobs_emploi_ma', 'raw_jobs_stagiaire', 'raw_jobs_marocannonces', 'raw_jobs_jobspy', 'raw_jobs_remotive')
+[2026-04-27T01:36:47.699+0000] {logging_mixin.py:188} INFO - [ETL] Lecture Kafka (timeout=30s)...
+[2026-04-27T01:36:47.706+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T01:36:47.708+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T01:36:47.710+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2026-04-27T01:36:47.823+0000] {cluster.py:403} INFO - Coordinator for group/***_etl_group is ('coordinator-1', 'kafka', 9092, None)
+[2026-04-27T01:36:47.826+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group ***_etl_group
+[2026-04-27T01:36:47.834+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2026-04-27T01:36:47.837+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group ***_etl_group
+[2026-04-27T01:36:47.839+0000] {base.py:433} INFO - Failed to join group ***_etl_group: NodeNotReadyError: coordinator-1
+[2026-04-27T01:36:47.852+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T01:36:47.856+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T01:36:47.960+0000] {base.py:546} INFO - (Re-)joining group ***_etl_group
+[2026-04-27T01:36:47.978+0000] {base.py:661} INFO - Received member id kafka-python-2.3.1-f7405928-2448-4f7f-a118-012d0203cbea for group ***_etl_group; will retry join-group
+[2026-04-27T01:36:47.982+0000] {base.py:433} INFO - Failed to join group ***_etl_group: [Error 79] MemberIdRequiredError
+[2026-04-27T01:36:47.985+0000] {base.py:546} INFO - (Re-)joining group ***_etl_group
+[2026-04-27T01:36:48.018+0000] {base.py:617} INFO - Successfully joined group ***_etl_group <Generation 1 (member_id: kafka-python-2.3.1-f7405928-2448-4f7f-a118-012d0203cbea, protocol: range)>
+[2026-04-27T01:36:48.032+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-04-27T01:36:48.057+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('raw_jobs_adzuna', 0), ('raw_jobs_emploi_ma', 0), ('raw_jobs_france_travail', 0), ('raw_jobs_jobspy', 0), ('raw_jobs_marocannonces', 0), ('raw_jobs_rekrute', 0), ('raw_jobs_remotive', 0), ('raw_jobs_stagiaire', 0)]
+[2026-04-27T01:36:48.064+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('raw_jobs_rekrute', 0), ('raw_jobs_emploi_ma', 0), ('raw_jobs_marocannonces', 0), ('raw_jobs_stagiaire', 0), ('raw_jobs_france_travail', 0), ('raw_jobs_adzuna', 0), ('raw_jobs_jobspy', 0), ('raw_jobs_remotive', 0)) for group ***_etl_group
+[2026-04-27T01:36:48.078+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_rekrute', 0) to offset 0.
+[2026-04-27T01:36:48.081+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_emploi_ma', 0) to offset 0.
+[2026-04-27T01:36:48.083+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_marocannonces', 0) to offset 0.
+[2026-04-27T01:36:48.085+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_stagiaire', 0) to offset 0.
+[2026-04-27T01:36:48.088+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_france_travail', 0) to offset 0.
+[2026-04-27T01:36:48.090+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_adzuna', 0) to offset 0.
+[2026-04-27T01:36:48.092+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_jobspy', 0) to offset 0.
+[2026-04-27T01:36:48.094+0000] {fetcher.py:419} INFO - Resetting offset for partition ('raw_jobs_remotive', 0) to offset 0.
+[2026-04-27T01:36:48.759+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T01:36:48.902+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_9e64d5ef-cea8-4954-8656-6c67790ce50d.json
+[2026-04-27T01:36:48.959+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_ab6a643d-f3e3-4baa-a522-5b26f2e462dc.json
+[2026-04-27T01:36:49.300+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 50 uniques | 0 doublons
+[2026-04-27T01:36:49.336+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_a9d7020d-273c-4d0a-98cf-e0e36cce82e7.json
+[2026-04-27T01:36:49.366+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_e1def9ce-1265-4b79-9504-60317c9c0772.json
+[2026-04-27T01:36:50.003+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T01:36:50.041+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_54058d5d-4de5-42cc-8acf-5a76a2ab6174.json
+[2026-04-27T01:36:50.063+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_f64d1652-bd6e-424c-aca8-e56ef529458c.json
+[2026-04-27T01:36:50.180+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 50 uniques | 0 doublons
+[2026-04-27T01:36:50.214+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_ce46dfa3-0647-4765-b59c-6c4e6a49ec19.json
+[2026-04-27T01:36:50.244+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_dd61cbfe-2163-4952-bc9f-96e789e910d1.json
+[2026-04-27T01:36:50.594+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T01:36:50.684+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_3d37f5b1-d3d7-4fd4-9500-c26ae44de965.json
+[2026-04-27T01:36:50.713+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_fa5e74ae-8cd2-4742-80fd-56264afe942e.json
+[2026-04-27T01:36:51.099+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 50 uniques | 0 doublons
+[2026-04-27T01:36:51.164+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_ba9e56b9-ddb5-4902-aab5-ef230c7aeae3.json
+[2026-04-27T01:36:51.211+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_c8e05aae-909b-4a75-af39-f7fed4559da7.json
+[2026-04-27T01:36:51.570+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T01:36:51.603+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_73da9e21-6d58-4adf-90dd-8d0605e24975.json
+[2026-04-27T01:36:51.626+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_f2c61ea7-3d85-4094-8c60-bf595ffa654b.json
+[2026-04-27T01:36:51.751+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 50 uniques | 0 doublons
+[2026-04-27T01:36:51.784+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_9d45bc43-dbe6-41f4-a2c3-3bae89e1e031.json
+[2026-04-27T01:36:51.819+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_ce9573c4-d0b7-4a9b-bb1b-b39061f25f6e.json
+[2026-04-27T01:36:52.255+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T01:36:52.331+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_e5540385-a199-4756-bec5-a70ecde9a412.json
+[2026-04-27T01:36:52.366+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_fbe31b7e-ecdf-49ae-9a5f-da13f7c26cf8.json
+[2026-04-27T01:36:52.706+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 50 uniques | 0 doublons
+[2026-04-27T01:36:52.752+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_ead7e84d-68f3-4689-aa9a-42ca1fc129c5.json
+[2026-04-27T01:36:52.789+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_a880da66-8208-49a7-b0e8-57f93252f0ab.json
+[2026-04-27T01:36:53.456+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 49 uniques | 1 doublons
+[2026-04-27T01:36:53.591+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_cdffad8a-64df-4dda-b3e5-9b8b3d751ca8.json
+[2026-04-27T01:36:53.722+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_135321a4-df1c-4b9b-96bc-0488ee2b1a33.json
+[2026-04-27T01:36:54.260+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 50 uniques | 0 doublons
+[2026-04-27T01:36:54.329+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-04-27/jobs_9fb0ca1e-c355-497b-8364-e1cca69ea0a3.json
+[2026-04-27T01:36:54.426+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_9e885e3f-b4cf-4b98-95a2-05783a94f538.json
+[2026-04-27T01:37:24.731+0000] {logging_mixin.py:188} INFO - [ETL] Batch : 8 uniques | 7 doublons
+[2026-04-27T01:37:24.762+0000] {logging_mixin.py:188} INFO - 💾 Silver rekrute → silver/source=rekrute/date=2026-04-27/jobs_f3e1116a-57f6-4da7-a061-f4094ed37525.json
+[2026-04-27T01:37:24.796+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-04-27_46288137-3c19-40ea-aac8-c0324915f581.json
+[2026-04-27T01:37:24.804+0000] {base.py:1130} INFO - Stopping heartbeat thread
+[2026-04-27T01:37:24.807+0000] {base.py:943} INFO - Leaving consumer group ***_etl_group (member kafka-python-2.3.1-f7405928-2448-4f7f-a118-012d0203cbea).
+[2026-04-27T01:37:24.823+0000] {base.py:961} INFO - LeaveGroup request for group ***_etl_group returned successfully
+[2026-04-27T01:37:24.824+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2026-04-27T01:37:24.826+0000] {fetcher.py:790} INFO - Fetch to node 1 failed: Cancelled: <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>
+[2026-04-27T01:37:24.827+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2026-04-27T01:37:24.828+0000] {logging_mixin.py:188} INFO - [ETL] Total lus : 615 | Transformes : 602
+[2026-04-27T01:37:24.990+0000] {python.py:237} INFO - Done. Returned value was: {'total_lus': 615, 'total_charge': 602}
+[2026-04-27T01:37:24.993+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T01:37:25.098+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline, task_id=etl_kafka, run_id=manual__2026-04-27T01:34:41.436277+00:00, execution_date=20260427T013441, start_date=20260427T013634, end_date=20260427T013725
+[2026-04-27T01:37:25.242+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T01:37:25.475+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T01:37:25.487+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

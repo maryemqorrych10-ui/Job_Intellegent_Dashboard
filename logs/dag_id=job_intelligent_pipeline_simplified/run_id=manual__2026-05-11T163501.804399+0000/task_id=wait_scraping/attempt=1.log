@@ -1,0 +1,21 @@
+[2026-05-11T16:35:23.190+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T16:35:23.381+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.wait_scraping manual__2026-05-11T16:35:01.804399+00:00 [queued]>
+[2026-05-11T16:35:23.430+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.wait_scraping manual__2026-05-11T16:35:01.804399+00:00 [queued]>
+[2026-05-11T16:35:23.431+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T16:35:23.523+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): wait_scraping> on 2026-05-11 16:35:01.804399+00:00
+[2026-05-11T16:35:23.548+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=208) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T16:35:23.553+0000] {standard_task_runner.py:63} INFO - Started process 209 to run task
+[2026-05-11T16:35:23.587+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'wait_scraping', 'manual__2026-05-11T16:35:01.804399+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpy2cjj695']
+[2026-05-11T16:35:23.591+0000] {standard_task_runner.py:91} INFO - Job 47: Subtask wait_scraping
+[2026-05-11T16:35:23.948+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.wait_scraping manual__2026-05-11T16:35:01.804399+00:00 [running]> on host e9430ddab16c
+[2026-05-11T16:35:25.103+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='wait_scraping' AIRFLOW_CTX_EXECUTION_DATE='2026-05-11T16:35:01.804399+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-11T16:35:01.804399+00:00'
+[2026-05-11T16:35:25.110+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T16:35:25.170+0000] {logging_mixin.py:188} INFO - [Wait] Attente 10s pour laisser les scrapers écrire dans MinIO...
+[2026-05-11T16:35:35.169+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-05-11T16:35:35.173+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T16:35:35.216+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=wait_scraping, run_id=manual__2026-05-11T16:35:01.804399+00:00, execution_date=20260511T163501, start_date=20260511T163523, end_date=20260511T163535
+[2026-05-11T16:35:35.279+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-11T16:35:35.362+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T16:35:35.365+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

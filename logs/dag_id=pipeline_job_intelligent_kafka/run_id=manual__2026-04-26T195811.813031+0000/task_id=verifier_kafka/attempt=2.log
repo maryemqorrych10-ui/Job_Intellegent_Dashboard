@@ -1,0 +1,40 @@
+[2026-04-26T20:04:00.819+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-26T20:04:00.914+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pipeline_job_intelligent_kafka.verifier_kafka manual__2026-04-26T19:58:11.813031+00:00 [queued]>
+[2026-04-26T20:04:00.945+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pipeline_job_intelligent_kafka.verifier_kafka manual__2026-04-26T19:58:11.813031+00:00 [queued]>
+[2026-04-26T20:04:00.948+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 3
+[2026-04-26T20:04:01.007+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): verifier_kafka> on 2026-04-26 19:58:11.813031+00:00
+[2026-04-26T20:04:01.021+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=151) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-26T20:04:01.026+0000] {standard_task_runner.py:63} INFO - Started process 152 to run task
+[2026-04-26T20:04:01.031+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'pipeline_job_intelligent_kafka', 'verifier_kafka', 'manual__2026-04-26T19:58:11.813031+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/dag_pipeline_complet.py', '--cfg-path', '/tmp/tmphi82gikk']
+[2026-04-26T20:04:01.035+0000] {standard_task_runner.py:91} INFO - Job 27: Subtask verifier_kafka
+[2026-04-26T20:04:01.158+0000] {task_command.py:426} INFO - Running <TaskInstance: pipeline_job_intelligent_kafka.verifier_kafka manual__2026-04-26T19:58:11.813031+00:00 [running]> on host 5ee73420ef4b
+[2026-04-26T20:04:01.373+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='pipeline_job_intelligent_kafka' AIRFLOW_CTX_TASK_ID='verifier_kafka' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T19:58:11.813031+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-26T19:58:11.813031+00:00'
+[2026-04-26T20:04:01.378+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-26T20:04:01.443+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-26T20:04:01.444+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_pipeline_complet.py", line 22, in verifier_kafka
+    from kafka_pipeline import check_kafka_status
+ModuleNotFoundError: No module named 'kafka_pipeline'
+[2026-04-26T20:04:01.477+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline_job_intelligent_kafka, task_id=verifier_kafka, run_id=manual__2026-04-26T19:58:11.813031+00:00, execution_date=20260426T195811, start_date=20260426T200400, end_date=20260426T200401
+[2026-04-26T20:04:01.519+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 27 for task verifier_kafka (No module named 'kafka_pipeline'; 152)
+[2026-04-26T20:04:01.570+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-04-26T20:04:01.629+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-26T20:04:01.632+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

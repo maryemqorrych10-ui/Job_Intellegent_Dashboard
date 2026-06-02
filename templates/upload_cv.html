@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4">
+    <h3>📄 Uploader votre CV</h3>
+    <p>Nous extrairons automatiquement vos compétences et vous recommanderons des offres.</p>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">CV (PDF ou DOCX)</label>
+            <input type="file" name="cv" class="form-control" accept=".pdf,.docx" required>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Ville (optionnel)</label>
+                <input type="text" name="ville" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-check mt-4">
+                    <input type="checkbox" name="teletravail" class="form-check-input">
+                    <label class="form-check-label"> Télétravail</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Type de contrat souhaité</label>
+                <select name="type_contrat" class="form-select">
+                    <option value="">Tous</option>
+                    <option>CDI</option>
+                    <option>CDD</option>
+                    <option>Freelance</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Niveau d'expérience</label>
+                <select name="niveau_exp" class="form-select">
+                    <option value="">Tous</option>
+                    <option>Junior (0-2 ans)</option>
+                    <option>Confirmé (3-5 ans)</option>
+                    <option>Senior (5+ ans)</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Analyser mon CV</button>
+    </form>
+</div>
+{% endblock %}

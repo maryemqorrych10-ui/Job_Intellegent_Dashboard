@@ -1,0 +1,51 @@
+[2026-04-27T01:49:27.428+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T01:49:28.272+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T01:34:43.372816+00:00 [queued]>
+[2026-04-27T01:49:28.468+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T01:34:43.372816+00:00 [queued]>
+[2026-04-27T01:49:28.502+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-27T01:49:28.819+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_kafka> on 2026-04-27 01:34:43.372816+00:00
+[2026-04-27T01:49:28.907+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'etl_kafka', 'manual__2026-04-27T01:34:43.372816+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmp01t5_npk']
+[2026-04-27T01:49:28.936+0000] {standard_task_runner.py:91} INFO - Job 87: Subtask etl_kafka
+[2026-04-27T01:49:28.924+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=575) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-27T01:49:28.964+0000] {standard_task_runner.py:63} INFO - Started process 583 to run task
+[2026-04-27T01:49:30.539+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.etl_kafka manual__2026-04-27T01:34:43.372816+00:00 [running]> on host 29da1de14b83
+[2026-04-27T01:49:32.299+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='etl_kafka' AIRFLOW_CTX_EXECUTION_DATE='2026-04-27T01:34:43.372816+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-27T01:34:43.372816+00:00'
+[2026-04-27T01:49:32.327+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T01:49:40.675+0000] {logging_mixin.py:188} INFO - [ETL] Connexion Kafka : kafka:9092
+[2026-04-27T01:49:40.692+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T01:49:40.712+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.18.0.3', 9092)]>: Broker version identified as 2.6
+[2026-04-27T01:49:40.719+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T01:49:40.738+0000] {subscription_state.py:181} INFO - Updating subscribed topics to: ('raw_jobs_rekrute', 'raw_jobs_france_travail', 'raw_jobs_adzuna', 'raw_jobs_emploi_ma', 'raw_jobs_stagiaire', 'raw_jobs_marocannonces', 'raw_jobs_jobspy', 'raw_jobs_remotive')
+[2026-04-27T01:49:40.747+0000] {logging_mixin.py:188} INFO - [ETL] Lecture Kafka (timeout=30s)...
+[2026-04-27T01:49:40.781+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T01:49:40.785+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T01:49:40.787+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2026-04-27T01:49:40.988+0000] {cluster.py:403} INFO - Coordinator for group/***_etl_group is ('coordinator-1', 'kafka', 9092, None)
+[2026-04-27T01:49:40.995+0000] {base.py:835} INFO - Discovered coordinator coordinator-1 for group ***_etl_group
+[2026-04-27T01:49:41.004+0000] {base.py:895} INFO - Starting new heartbeat thread
+[2026-04-27T01:49:41.028+0000] {consumer.py:379} INFO - Revoking previously assigned partitions () for group ***_etl_group
+[2026-04-27T01:49:41.031+0000] {base.py:433} INFO - Failed to join group ***_etl_group: NodeNotReadyError: coordinator-1
+[2026-04-27T01:49:41.049+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.3', 9092)]>: connecting to kafka:9092 [('172.18.0.3', 9092) IPv4]
+[2026-04-27T01:49:41.060+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Connection complete.
+[2026-04-27T01:49:41.168+0000] {base.py:546} INFO - (Re-)joining group ***_etl_group
+[2026-04-27T01:49:41.213+0000] {base.py:661} INFO - Received member id kafka-python-2.3.1-f0c102d0-aa7e-4d5e-a5f5-00b8cab9d0d3 for group ***_etl_group; will retry join-group
+[2026-04-27T01:49:41.217+0000] {base.py:433} INFO - Failed to join group ***_etl_group: [Error 79] MemberIdRequiredError
+[2026-04-27T01:49:41.223+0000] {base.py:546} INFO - (Re-)joining group ***_etl_group
+[2026-04-27T01:49:41.236+0000] {base.py:617} INFO - Successfully joined group ***_etl_group <Generation 3 (member_id: kafka-python-2.3.1-f0c102d0-aa7e-4d5e-a5f5-00b8cab9d0d3, protocol: range)>
+[2026-04-27T01:49:41.242+0000] {base.py:619} INFO - Elected group leader -- performing partition assignments using range
+[2026-04-27T01:49:41.306+0000] {subscription_state.py:254} INFO - Updated partition assignment: [('raw_jobs_adzuna', 0), ('raw_jobs_emploi_ma', 0), ('raw_jobs_france_travail', 0), ('raw_jobs_jobspy', 0), ('raw_jobs_marocannonces', 0), ('raw_jobs_rekrute', 0), ('raw_jobs_remotive', 0), ('raw_jobs_stagiaire', 0)]
+[2026-04-27T01:49:41.389+0000] {consumer.py:260} INFO - Setting newly assigned partitions (('raw_jobs_rekrute', 0), ('raw_jobs_emploi_ma', 0), ('raw_jobs_marocannonces', 0), ('raw_jobs_stagiaire', 0), ('raw_jobs_france_travail', 0), ('raw_jobs_adzuna', 0), ('raw_jobs_jobspy', 0), ('raw_jobs_remotive', 0)) for group ***_etl_group
+[2026-04-27T01:50:10.762+0000] {base.py:1130} INFO - Stopping heartbeat thread
+[2026-04-27T01:50:10.769+0000] {base.py:943} INFO - Leaving consumer group ***_etl_group (member kafka-python-2.3.1-f0c102d0-aa7e-4d5e-a5f5-00b8cab9d0d3).
+[2026-04-27T01:50:10.784+0000] {base.py:961} INFO - LeaveGroup request for group ***_etl_group returned successfully
+[2026-04-27T01:50:10.786+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2026-04-27T01:50:10.789+0000] {fetcher.py:790} INFO - Fetch to node 1 failed: Cancelled: <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>
+[2026-04-27T01:50:10.790+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=kafka:9092 <connected> [IPv4 ('172.18.0.3', 9092)]>: Closing connection. 
+[2026-04-27T01:50:10.793+0000] {logging_mixin.py:188} INFO - [ETL] Total lus : 0 | Transformes : 0
+[2026-04-27T01:50:10.875+0000] {python.py:237} INFO - Done. Returned value was: {'total_lus': 0, 'total_charge': 0}
+[2026-04-27T01:50:10.876+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T01:50:11.042+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline, task_id=etl_kafka, run_id=manual__2026-04-27T01:34:43.372816+00:00, execution_date=20260427T013443, start_date=20260427T014928, end_date=20260427T015011
+[2026-04-27T01:50:11.257+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T01:50:11.460+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T01:50:11.522+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

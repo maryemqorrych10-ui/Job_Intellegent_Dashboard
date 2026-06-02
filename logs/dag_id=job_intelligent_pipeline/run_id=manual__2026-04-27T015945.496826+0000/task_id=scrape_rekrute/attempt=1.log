@@ -1,0 +1,23 @@
+[2026-04-27T02:04:01.925+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T02:04:02.267+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-04-27T01:59:45.496826+00:00 [queued]>
+[2026-04-27T02:04:02.360+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-04-27T01:59:45.496826+00:00 [queued]>
+[2026-04-27T02:04:02.373+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-27T02:04:02.666+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_rekrute> on 2026-04-27 01:59:45.496826+00:00
+[2026-04-27T02:04:02.719+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=808) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-27T02:04:02.757+0000] {standard_task_runner.py:63} INFO - Started process 811 to run task
+[2026-04-27T02:04:02.762+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'scrape_rekrute', 'manual__2026-04-27T01:59:45.496826+00:00', '--job-id', '99', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmpmkrjs8ss']
+[2026-04-27T02:04:02.823+0000] {standard_task_runner.py:91} INFO - Job 99: Subtask scrape_rekrute
+[2026-04-27T02:04:03.703+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.scrape_rekrute manual__2026-04-27T01:59:45.496826+00:00 [running]> on host 29da1de14b83
+[2026-04-27T02:04:05.451+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='scrape_rekrute' AIRFLOW_CTX_EXECUTION_DATE='2026-04-27T01:59:45.496826+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-27T01:59:45.496826+00:00'
+[2026-04-27T02:04:05.464+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T02:04:05.723+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper_api:8000/scrape/rekrute
+[2026-04-27T02:04:09.369+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute erreur : HTTPConnectionPool(host='scraper_api', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdc8b5d17f0>: Failed to resolve 'scraper_api' ([Errno -2] Name or service not known)"))
+[2026-04-27T02:04:09.371+0000] {logging_mixin.py:188} INFO - [Scraping] Rekrute : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdc8b5d17f0>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-27T02:04:09.505+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdc8b5d17f0>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-27T02:04:09.529+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T02:04:09.710+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline, task_id=scrape_rekrute, run_id=manual__2026-04-27T01:59:45.496826+00:00, execution_date=20260427T015945, start_date=20260427T020402, end_date=20260427T020409
+[2026-04-27T02:04:09.890+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T02:04:10.129+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T02:04:10.168+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

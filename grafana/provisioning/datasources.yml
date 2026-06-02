@@ -1,0 +1,32 @@
+# grafana/provisioning/datasources/datasources.yml
+# =============================================================================
+#  Configuration automatique des sources de données Grafana
+#  Chargé au démarrage du conteneur Grafana
+# =============================================================================
+
+apiVersion: 1
+
+datasources:
+
+  # ─── MySQL — Base des offres d'emploi ──────────────────────────────────────
+  - name: MySQL_Jobs
+    type: mysql
+    url: mysql:3306
+    database: jobs_db
+    user: jobs_user
+    secureJsonData:
+      password: "${MYSQL_PASSWORD:-jobspassword}"
+    isDefault: true
+    editable: true
+
+  # ─── PostgreSQL — Base Airflow ──────────────────────────────────────────────
+  - name: PostgreSQL_Airflow
+    type: postgres
+    url: postgres:5432
+    database: airflow
+    user: airflow
+    secureJsonData:
+      password: "${POSTGRES_PASSWORD:-airflow}"
+    jsonData:
+      sslmode: disable
+    editable: true

@@ -1,0 +1,23 @@
+[2026-05-11T17:54:34.752+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T17:54:35.098+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_france_travail manual__2026-05-11T17:54:19.305492+00:00 [queued]>
+[2026-05-11T17:54:35.144+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.scrape_france_travail manual__2026-05-11T17:54:19.305492+00:00 [queued]>
+[2026-05-11T17:54:35.146+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T17:54:35.207+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): scrape_france_travail> on 2026-05-11 17:54:19.305492+00:00
+[2026-05-11T17:54:35.248+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=155) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T17:54:35.277+0000] {standard_task_runner.py:63} INFO - Started process 156 to run task
+[2026-05-11T17:54:35.266+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'scrape_france_travail', 'manual__2026-05-11T17:54:19.305492+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpbftrqrtw']
+[2026-05-11T17:54:35.285+0000] {standard_task_runner.py:91} INFO - Job 55: Subtask scrape_france_travail
+[2026-05-11T17:54:36.199+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.scrape_france_travail manual__2026-05-11T17:54:19.305492+00:00 [running]> on host 3d6dc2445e84
+[2026-05-11T17:54:38.015+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='scrape_france_travail' AIRFLOW_CTX_EXECUTION_DATE='2026-05-11T17:54:19.305492+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-11T17:54:19.305492+00:00'
+[2026-05-11T17:54:38.054+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T17:54:38.314+0000] {logging_mixin.py:188} INFO - [Scraping] POST http://scraper-api:8000/scrape/france_travail
+[2026-05-11T17:54:38.681+0000] {logging_mixin.py:188} INFO - [Scraping] FranceTravail erreur : 404 Client Error: Not Found for url: http://scraper-api:8000/scrape/france_travail
+[2026-05-11T17:54:38.684+0000] {logging_mixin.py:188} INFO - [Scraping] FranceTravail : {'status': 'erreur', 'message': '404 Client Error: Not Found for url: http://scraper-api:8000/scrape/france_travail'}
+[2026-05-11T17:54:38.799+0000] {python.py:237} INFO - Done. Returned value was: {'status': 'erreur', 'message': '404 Client Error: Not Found for url: http://scraper-api:8000/scrape/france_travail'}
+[2026-05-11T17:54:38.800+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T17:54:38.992+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=scrape_france_travail, run_id=manual__2026-05-11T17:54:19.305492+00:00, execution_date=20260511T175419, start_date=20260511T175435, end_date=20260511T175438
+[2026-05-11T17:54:39.333+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-11T17:54:39.632+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T17:54:39.637+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

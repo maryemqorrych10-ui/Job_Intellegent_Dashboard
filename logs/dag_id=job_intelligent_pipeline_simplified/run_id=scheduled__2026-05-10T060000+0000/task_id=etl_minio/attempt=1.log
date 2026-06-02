@@ -1,0 +1,138 @@
+[2026-05-11T10:43:27.690+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T10:43:27.845+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T10:43:27.897+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T10:43:27.907+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T10:43:28.024+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_minio> on 2026-05-10 06:00:00+00:00
+[2026-05-11T10:43:28.047+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=453) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T10:43:28.051+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'etl_minio', 'scheduled__2026-05-10T06:00:00+00:00', '--job-id', '503', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpn5lb5ooe']
+[2026-05-11T10:43:28.062+0000] {standard_task_runner.py:91} INFO - Job 503: Subtask etl_minio
+[2026-05-11T10:43:28.062+0000] {standard_task_runner.py:63} INFO - Started process 454 to run task
+[2026-05-11T10:43:28.365+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [running]> on host 895ca0ce75a2
+[2026-05-11T10:43:28.812+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='etl_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-05-10T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-10T06:00:00+00:00'
+[2026-05-11T10:43:28.816+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T10:43:28.886+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T10:43:28.889+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 460, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/__pycache__/job_intelligent_pipeline.py", line 75, in task_etl_minio
+    from etl_from_minio import run_etl_from_minio
+ModuleNotFoundError: No module named 'etl_from_minio'
+[2026-05-11T10:43:28.940+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=job_intelligent_pipeline_simplified, task_id=etl_minio, run_id=scheduled__2026-05-10T06:00:00+00:00, execution_date=20260510T060000, start_date=20260511T104327, end_date=20260511T104328
+[2026-05-11T10:43:29.006+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 503 for task etl_minio (No module named 'etl_from_minio'; 454)
+[2026-05-11T10:43:29.112+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-11T10:43:29.381+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T10:43:29.450+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-05-11T15:04:34.526+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T15:04:34.647+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T15:04:34.672+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T15:04:34.673+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T15:04:34.792+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_minio> on 2026-05-10 06:00:00+00:00
+[2026-05-11T15:04:34.822+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1399) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T15:04:34.838+0000] {standard_task_runner.py:63} INFO - Started process 1400 to run task
+[2026-05-11T15:04:34.837+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'etl_minio', 'scheduled__2026-05-10T06:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmpsqs8nqwl']
+[2026-05-11T15:04:34.860+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask etl_minio
+[2026-05-11T15:04:35.138+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [running]> on host 7282f04bb408
+[2026-05-11T15:04:35.490+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='etl_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-05-10T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-10T06:00:00+00:00'
+[2026-05-11T15:04:35.493+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T15:04:35.642+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T15:04:35.643+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 460, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/__pycache__/job_intelligent_pipeline.py", line 75, in task_etl_minio
+    from etl_from_minio import run_etl_from_minio
+  File "/opt/airflow/scripts/etl_from_minio.py", line 6, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2026-05-11T15:04:35.823+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=job_intelligent_pipeline_simplified, task_id=etl_minio, run_id=scheduled__2026-05-10T06:00:00+00:00, execution_date=20260510T060000, start_date=20260511T150434, end_date=20260511T150435
+[2026-05-11T15:04:35.935+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 9 for task etl_minio (No module named 'minio'; 1400)
+[2026-05-11T15:04:36.001+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-11T15:04:36.086+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T15:04:36.094+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-05-11T20:26:18.574+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T20:26:18.723+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T20:26:18.778+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [queued]>
+[2026-05-11T20:26:18.781+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-11T20:26:18.836+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_minio> on 2026-05-10 06:00:00+00:00
+[2026-05-11T20:26:18.844+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=103) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T20:26:18.847+0000] {standard_task_runner.py:63} INFO - Started process 104 to run task
+[2026-05-11T20:26:18.855+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline_simplified', 'etl_minio', 'scheduled__2026-05-10T06:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/__pycache__/job_intelligent_pipeline.py', '--cfg-path', '/tmp/tmp7b7_3opv']
+[2026-05-11T20:26:18.857+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask etl_minio
+[2026-05-11T20:26:19.040+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline_simplified.etl_minio scheduled__2026-05-10T06:00:00+00:00 [running]> on host aafb6b060567
+[2026-05-11T20:26:19.443+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline_simplified' AIRFLOW_CTX_TASK_ID='etl_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-05-10T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-10T06:00:00+00:00'
+[2026-05-11T20:26:19.446+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T20:26:25.730+0000] {logging_mixin.py:188} INFO - 🚀 ETL depuis MinIO (bronze → silver/gold → MySQL)
+[2026-05-11T20:26:25.861+0000] {logging_mixin.py:188} INFO - [ETL] france_travail/2026-05-11/a7512af6-669c-4bee-963f-a7ec20858b3b.json : 490 offres
+[2026-05-11T20:26:25.915+0000] {logging_mixin.py:188} INFO - [ETL] adzuna/2026-05-11/ebef48d2-2a55-478f-8873-689d86d72a5d.json : 500 offres
+[2026-05-11T20:26:25.917+0000] {logging_mixin.py:188} INFO - 📥 990 offres brutes lues
+[2026-05-11T20:26:26.617+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-11/jobs_379ce3c8-6dff-4d7d-a589-99ae67f39e83.json
+[2026-05-11T20:26:26.714+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_627acb93-bc69-492b-b139-c750950b493d.json
+[2026-05-11T20:26:34.926+0000] {logging_mixin.py:188} INFO - ✅ 99 offres chargées dans MySQL
+[2026-05-11T20:26:35.257+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-11/jobs_72fd3203-85e8-4d41-ad87-82d34ded0d19.json
+[2026-05-11T20:26:35.293+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_85b4a2e5-13de-400e-be4f-b0b0477f6be3.json
+[2026-05-11T20:26:38.797+0000] {logging_mixin.py:188} INFO - ✅ 98 offres chargées dans MySQL
+[2026-05-11T20:26:39.218+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-11/jobs_92ce8b26-2417-41b2-9918-c277d145fb64.json
+[2026-05-11T20:26:39.263+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_b1746c43-f3c7-4f69-8b25-74ab8d0e61b4.json
+[2026-05-11T20:26:42.763+0000] {logging_mixin.py:188} INFO - ✅ 98 offres chargées dans MySQL
+[2026-05-11T20:26:43.225+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-11/jobs_3d6f20e1-3c9f-46d1-9de0-8e79699468e6.json
+[2026-05-11T20:26:43.310+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_673c3eda-cda2-4b9b-ac1a-c55cac6175d1.json
+[2026-05-11T20:26:46.540+0000] {logging_mixin.py:188} INFO - ✅ 95 offres chargées dans MySQL
+[2026-05-11T20:26:46.884+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-11/jobs_908debed-18c7-464a-ab21-b95a64d1a0e7.json
+[2026-05-11T20:26:46.937+0000] {logging_mixin.py:188} INFO - 💾 Silver francetravail.fr → silver/source=francetravail.fr/date=2026-05-11/jobs_bf206fef-a65a-4e5a-a119-3fa9f22b7010.json
+[2026-05-11T20:26:46.960+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_97525190-9337-44de-8db3-8e960472dade.json
+[2026-05-11T20:26:50.110+0000] {logging_mixin.py:188} INFO - ✅ 99 offres chargées dans MySQL
+[2026-05-11T20:26:50.402+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-11/jobs_88dbe8fc-0cb8-48d6-899c-ee87c948eb3b.json
+[2026-05-11T20:26:50.431+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_d6025c38-047a-429d-9e92-d182bcc5e24c.json
+[2026-05-11T20:26:54.314+0000] {logging_mixin.py:188} INFO - ✅ 100 offres chargées dans MySQL
+[2026-05-11T20:26:54.689+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-11/jobs_bc56b5b7-379b-4836-a23f-ebbeac74b1f3.json
+[2026-05-11T20:26:54.716+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_8cf3a412-19f4-4d35-a870-8fa8ba67526f.json
+[2026-05-11T20:26:58.266+0000] {logging_mixin.py:188} INFO - ✅ 100 offres chargées dans MySQL
+[2026-05-11T20:26:58.566+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-11/jobs_e1837c5c-85f7-4458-9c6a-bb5c17aa5fe0.json
+[2026-05-11T20:26:58.599+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_38c44d32-290a-4c76-8d28-6da6922ae194.json
+[2026-05-11T20:27:01.897+0000] {logging_mixin.py:188} INFO - ✅ 100 offres chargées dans MySQL
+[2026-05-11T20:27:02.316+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-11/jobs_9f5b578d-0b62-4725-96bb-984786e7ae4c.json
+[2026-05-11T20:27:02.453+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_adb77d5e-e993-4089-ab21-a9e345176dba.json
+[2026-05-11T20:27:06.361+0000] {logging_mixin.py:188} INFO - ✅ 100 offres chargées dans MySQL
+[2026-05-11T20:27:06.569+0000] {logging_mixin.py:188} INFO - 💾 Silver adzuna → silver/source=adzuna/date=2026-05-11/jobs_2e2e796b-856d-4f6a-abf2-80dbdfbc6149.json
+[2026-05-11T20:27:06.594+0000] {logging_mixin.py:188} INFO - 📊 Gold → gold/recommandations_2026-05-11_967092cc-cc16-4b21-9a1f-b98c757132f1.json
+[2026-05-11T20:27:09.716+0000] {logging_mixin.py:188} INFO - ✅ 88 offres chargées dans MySQL
+[2026-05-11T20:27:09.719+0000] {logging_mixin.py:188} INFO - ✅ ETL terminé. Offres transformées et chargées : 984
+[2026-05-11T20:27:09.840+0000] {python.py:237} INFO - Done. Returned value was: {'total_lus': 990, 'total_charge': 984}
+[2026-05-11T20:27:09.841+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T20:27:09.908+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline_simplified, task_id=etl_minio, run_id=scheduled__2026-05-10T06:00:00+00:00, execution_date=20260510T060000, start_date=20260511T202618, end_date=20260511T202709
+[2026-05-11T20:27:10.059+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-11T20:27:10.149+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T20:27:10.158+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

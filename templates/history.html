@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4">
+    <h3>📊 Historique des recommandations</h3>
+    <p>Nombre d'offres recommandées par jour</p>
+    <canvas id="historyChart" width="400" height="200"></canvas>
+    <a href="/dashboard" class="btn btn-secondary mt-3">Retour</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('historyChart').getContext('2d');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ dates|tojson }},
+        datasets: [{
+            label: 'Offres recommandées',
+            data: {{ counts|tojson }},
+            borderColor: '#667eea',
+            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+            tension: 0.3,
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: { beginAtZero: true, title: { display: true, text: 'Nombre d\'offres' } },
+            x: { title: { display: true, text: 'Date' } }
+        }
+    }
+});
+</script>
+{% endblock %}

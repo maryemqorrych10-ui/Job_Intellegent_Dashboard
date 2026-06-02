@@ -1,0 +1,61 @@
+[2026-05-17T15:20:46.462+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-17T15:20:46.648+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: send_job_notifications.send_emails manual__2026-05-17T15:20:42.310028+00:00 [queued]>
+[2026-05-17T15:20:46.699+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: send_job_notifications.send_emails manual__2026-05-17T15:20:42.310028+00:00 [queued]>
+[2026-05-17T15:20:46.713+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-05-17T15:20:46.833+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): send_emails> on 2026-05-17 15:20:42.310028+00:00
+[2026-05-17T15:20:46.856+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1083) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-17T15:20:46.861+0000] {standard_task_runner.py:63} INFO - Started process 1084 to run task
+[2026-05-17T15:20:46.864+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'send_job_notifications', 'send_emails', 'manual__2026-05-17T15:20:42.310028+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/send_job_notifications.py', '--cfg-path', '/tmp/tmp1v6p45c7']
+[2026-05-17T15:20:46.867+0000] {standard_task_runner.py:91} INFO - Job 45: Subtask send_emails
+[2026-05-17T15:20:47.144+0000] {task_command.py:426} INFO - Running <TaskInstance: send_job_notifications.send_emails manual__2026-05-17T15:20:42.310028+00:00 [running]> on host ad622d0a1964
+[2026-05-17T15:20:47.577+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='send_job_notifications' AIRFLOW_CTX_TASK_ID='send_emails' AIRFLOW_CTX_EXECUTION_DATE='2026-05-17T15:20:42.310028+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-17T15:20:42.310028+00:00'
+[2026-05-17T15:20:47.579+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-17T15:20:47.615+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-17T15:20:47.618+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/send_notifications.py']
+[2026-05-17T15:20:47.638+0000] {subprocess.py:86} INFO - Output:
+[2026-05-17T15:20:57.100+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-17T15:20:57.107+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/send_notifications.py", line 24, in send_email
+[2026-05-17T15:20:57.170+0000] {subprocess.py:93} INFO -     server.login(SMTP_USER, SMTP_PASSWORD)
+[2026-05-17T15:20:57.171+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/smtplib.py", line 739, in login
+[2026-05-17T15:20:57.172+0000] {subprocess.py:93} INFO -     (code, resp) = self.auth(
+[2026-05-17T15:20:57.175+0000] {subprocess.py:93} INFO -                    ^^^^^^^^^^
+[2026-05-17T15:20:57.182+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/smtplib.py", line 652, in auth
+[2026-05-17T15:20:57.186+0000] {subprocess.py:93} INFO -     authobject(challenge).encode('ascii'), eol='')
+[2026-05-17T15:20:57.199+0000] {subprocess.py:93} INFO -     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-05-17T15:20:57.201+0000] {subprocess.py:93} INFO - AttributeError: 'NoneType' object has no attribute 'encode'
+[2026-05-17T15:20:57.203+0000] {subprocess.py:93} INFO - 
+[2026-05-17T15:20:57.205+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2026-05-17T15:20:57.231+0000] {subprocess.py:93} INFO - 
+[2026-05-17T15:20:57.250+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-17T15:20:57.253+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/send_notifications.py", line 65, in <module>
+[2026-05-17T15:20:57.284+0000] {subprocess.py:93} INFO -     main()
+[2026-05-17T15:20:57.300+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/send_notifications.py", line 60, in main
+[2026-05-17T15:20:57.316+0000] {subprocess.py:93} INFO -     send_email(user["email"], "Nouvelles offres data correspondant à votre profil", html)
+[2026-05-17T15:20:57.339+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/send_notifications.py", line 22, in send_email
+[2026-05-17T15:20:57.372+0000] {subprocess.py:93} INFO -     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+[2026-05-17T15:20:57.382+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/smtplib.py", line 284, in __exit__
+[2026-05-17T15:20:57.400+0000] {subprocess.py:93} INFO -     raise SMTPResponseException(code, message)
+[2026-05-17T15:20:57.401+0000] {subprocess.py:93} INFO - smtplib.SMTPResponseException: (334, b'UGFzc3dvcmQ6')
+[2026-05-17T15:20:58.080+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-17T15:20:58.137+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-17T15:20:58.311+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-17T15:20:58.383+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=send_job_notifications, task_id=send_emails, run_id=manual__2026-05-17T15:20:42.310028+00:00, execution_date=20260517T152042, start_date=20260517T152046, end_date=20260517T152058
+[2026-05-17T15:20:58.536+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 45 for task send_emails (Bash command failed. The command returned a non-zero exit code 1.; 1084)
+[2026-05-17T15:20:58.633+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-17T15:20:58.791+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-17T15:20:58.827+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

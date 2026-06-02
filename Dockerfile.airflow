@@ -1,0 +1,12 @@
+FROM apache/airflow:2.9.1
+
+USER airflow
+RUN pip install --no-cache-dir \
+    minio \
+    mysql-connector-python \
+    kafka-python-ng==2.2.3 \
+    boto3 \
+    pandas \
+    pyarrow \
+    confluent-kafka
+

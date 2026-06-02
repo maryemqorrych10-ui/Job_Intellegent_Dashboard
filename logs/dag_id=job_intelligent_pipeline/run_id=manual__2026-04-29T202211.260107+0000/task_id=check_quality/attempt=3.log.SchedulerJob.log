@@ -1,0 +1,1 @@
+[2026-04-30T22:20:19.825+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: job_intelligent_pipeline.check_quality manual__2026-04-29T20:22:11.260107+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

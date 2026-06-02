@@ -1,0 +1,33 @@
+[2026-04-27T11:55:44.791+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:55:44.863+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job_intelligent_pipeline.check_quality manual__2026-04-27T11:53:12.128524+00:00 [queued]>
+[2026-04-27T11:55:44.883+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job_intelligent_pipeline.check_quality manual__2026-04-27T11:53:12.128524+00:00 [queued]>
+[2026-04-27T11:55:44.884+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-04-27T11:55:44.921+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): check_quality> on 2026-04-27 11:53:12.128524+00:00
+[2026-04-27T11:55:44.931+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2719) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-27T11:55:44.948+0000] {standard_task_runner.py:63} INFO - Started process 2720 to run task
+[2026-04-27T11:55:44.935+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'job_intelligent_pipeline', 'check_quality', 'manual__2026-04-27T11:53:12.128524+00:00', '--job-id', '126', '--raw', '--subdir', 'DAGS_FOLDER/dag_job_intelligent.py', '--cfg-path', '/tmp/tmpxs2wh0aj']
+[2026-04-27T11:55:44.952+0000] {standard_task_runner.py:91} INFO - Job 126: Subtask check_quality
+[2026-04-27T11:55:45.127+0000] {task_command.py:426} INFO - Running <TaskInstance: job_intelligent_pipeline.check_quality manual__2026-04-27T11:53:12.128524+00:00 [running]> on host 29da1de14b83
+[2026-04-27T11:55:45.470+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='job_intelligent' AIRFLOW_CTX_DAG_ID='job_intelligent_pipeline' AIRFLOW_CTX_TASK_ID='check_quality' AIRFLOW_CTX_EXECUTION_DATE='2026-04-27T11:53:12.128524+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-27T11:53:12.128524+00:00'
+[2026-04-27T11:55:45.471+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:55:45.786+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-04-27T11:55:45.789+0000] {logging_mixin.py:188} INFO -   RAPPORT PIPELINE JOB INTELLIGENT
+[2026-04-27T11:55:45.790+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-04-27T11:55:45.791+0000] {logging_mixin.py:188} INFO -   Rekrute        : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/rekrute (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdc8b4977a0>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-27T11:55:45.793+0000] {logging_mixin.py:188} INFO -   France Travail : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/france_travail (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdc8b62a930>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-27T11:55:45.794+0000] {logging_mixin.py:188} INFO -   Adzuna         : {'status': 'erreur', 'message': 'HTTPConnectionPool(host=\'scraper_api\', port=8000): Max retries exceeded with url: /scrape/adzuna (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7fdc8b8900e0>: Failed to resolve \'scraper_api\' ([Errno -2] Name or service not known)"))'}
+[2026-04-27T11:55:45.796+0000] {logging_mixin.py:188} INFO -   Kafka lus      : 0
+[2026-04-27T11:55:45.797+0000] {logging_mixin.py:188} INFO -   ETL transformes: 0
+[2026-04-27T11:55:45.798+0000] {logging_mixin.py:188} INFO -   MySQL charges  : 0
+[2026-04-27T11:55:45.799+0000] {logging_mixin.py:188} INFO -   Doublons       : 0
+[2026-04-27T11:55:45.799+0000] {logging_mixin.py:188} INFO -   Erreurs        : 0
+[2026-04-27T11:55:45.800+0000] {logging_mixin.py:188} INFO - =======================================================
+[2026-04-27T11:55:45.801+0000] {logging_mixin.py:188} INFO - [Qualite] Verification OK
+[2026-04-27T11:55:45.802+0000] {python.py:237} INFO - Done. Returned value was: {'kafka_lus': 0, 'etl_transformes': 0, 'mysql_charges': 0, 'doublons': 0, 'erreurs': 0}
+[2026-04-27T11:55:45.803+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:55:45.879+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=job_intelligent_pipeline, task_id=check_quality, run_id=manual__2026-04-27T11:53:12.128524+00:00, execution_date=20260427T115312, start_date=20260427T115544, end_date=20260427T115545
+[2026-04-27T11:55:45.935+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:55:45.990+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:55:46.001+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
